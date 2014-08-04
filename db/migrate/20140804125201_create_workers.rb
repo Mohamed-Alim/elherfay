@@ -3,8 +3,9 @@ class CreateWorkers < ActiveRecord::Migration
     create_table :workers do |t|
       t.string :name
       t.integer :telephone
-      t.boolean :availablility
+      t.boolean :availability
       t.decimal :totalavg
+      t.string :avcomment
 
       t.timestamps
     end

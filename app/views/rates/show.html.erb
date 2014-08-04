@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cleanliness:</strong>
+  <%= @rate.cleanliness %>
+</p>
+
+<p>
+  <strong>Quality:</strong>
+  <%= @rate.quality %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @rate.price %>
+</p>
+
+<p>
+  <strong>Punctulity:</strong>
+  <%= @rate.punctulity %>
+</p>
+
+<p>
+  <strong>Dealing:</strong>
+  <%= @rate.dealing %>
+</p>
+
+<p>
+  <strong>Average:</strong>
+  <%= @rate.average %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @rate.comment %>
+</p>
+
+<%= link_to 'Edit', edit_rate_path(@rate) %> |
+<%= link_to 'Back', rates_path %>

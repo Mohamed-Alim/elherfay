@@ -4,7 +4,8 @@ FactoryGirl.define do
   factory :worker do
     name "MyString"
     telephone 1
-    availablility false
+    availability false
     totalavg "9.99"
+    avcomment "MyString"
   end
 end
