@@ -7,8 +7,9 @@
       <th>Quality</th>
       <th>Price</th>
       <th>Punctulity</th>
-      <th>Average</th>
       <th>Dealing</th>
+      <th>Average</th>
+      <th>Comment</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,8 +21,9 @@
         <td><%= rate.quality %></td>
         <td><%= rate.price %></td>
         <td><%= rate.punctulity %></td>
-        <td><%= rate.average %></td>
         <td><%= rate.dealing %></td>
+        <td><%= rate.average %></td>
+        <td><%= rate.comment %></td>
         <td><%= link_to 'Show', rate %></td>
         <td><%= link_to 'Edit', edit_rate_path(rate) %></td>
         <td><%= link_to 'Destroy', rate, method: :delete, data: { confirm: 'Are you sure?' } %></td>

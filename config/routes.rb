@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :rates
 
-  resources :comments
-
   resources :workers
 
   devise_for :admins

@@ -4,11 +4,12 @@ RSpec.describe "rates/new", :type => :view do
   before(:each) do
     assign(:rate, Rate.new(
       :cleanliness => 1,
-      :quality => "",
+      :quality => 1,
       :price => 1,
       :punctulity => 1,
+      :dealing => 1,
       :average => "9.99",
-      :dealing => 1
+      :comment => "MyText"
     ))
   end
 
@@ -25,9 +26,11 @@ RSpec.describe "rates/new", :type => :view do
 
       assert_select "input#rate_punctulity[name=?]", "rate[punctulity]"
 
+      assert_select "input#rate_dealing[name=?]", "rate[dealing]"
+
       assert_select "input#rate_average[name=?]", "rate[average]"
 
-      assert_select "input#rate_dealing[name=?]", "rate[dealing]"
+      assert_select "textarea#rate_comment[name=?]", "rate[comment]"
     end
   end
 end

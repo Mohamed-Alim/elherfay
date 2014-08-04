@@ -21,13 +21,18 @@
 </p>
 
 <p>
+  <strong>Dealing:</strong>
+  <%= @rate.dealing %>
+</p>
+
+<p>
   <strong>Average:</strong>
   <%= @rate.average %>
 </p>
 
 <p>
-  <strong>Dealing:</strong>
-  <%= @rate.dealing %>
+  <strong>Comment:</strong>
+  <%= @rate.comment %>
 </p>
 
 <%= link_to 'Edit', edit_rate_path(@rate) %> |

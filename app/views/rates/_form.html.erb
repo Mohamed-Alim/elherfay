@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :quality %><br>
-    <%= f.text_field :quality %>
+    <%= f.number_field :quality %>
   </div>
   <div class="field">
     <%= f.label :price %><br>
@@ -28,12 +28,16 @@
     <%= f.number_field :punctulity %>
   </div>
   <div class="field">
+    <%= f.label :dealing %><br>
+    <%= f.number_field :dealing %>
+  </div>
+  <div class="field">
     <%= f.label :average %><br>
     <%= f.text_field :average %>
   </div>
   <div class="field">
-    <%= f.label :dealing %><br>
-    <%= f.number_field :dealing %>
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment %>
   </div>
   <div class="actions">
     <%= f.submit %>
