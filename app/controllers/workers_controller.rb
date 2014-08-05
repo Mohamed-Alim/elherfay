@@ -1,6 +1,8 @@
 class WorkersController < ApplicationController
   before_action :set_worker, only: [:show, :edit, :update, :destroy]
-
+def home
+  
+end
   # GET /workers
   # GET /workers.json
   def index
@@ -15,6 +17,7 @@ class WorkersController < ApplicationController
   # GET /workers/new
   def new
     @worker = Worker.new
+    @rate = @worker.rates.build
   end
 
   # GET /workers/1/edit
