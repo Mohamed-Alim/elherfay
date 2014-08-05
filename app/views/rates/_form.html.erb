@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :cleanliness %><br>
-    <%= f.number_field :cleanliness %>
-  </div>
-  <div class="field">
     <%= f.label :quality %><br>
     <%= f.number_field :quality %>
   </div>
@@ -24,8 +20,12 @@
     <%= f.number_field :price %>
   </div>
   <div class="field">
-    <%= f.label :punctulity %><br>
-    <%= f.number_field :punctulity %>
+    <%= f.label :cleanliness %><br>
+    <%= f.number_field :cleanliness %>
+  </div>
+  <div class="field">
+    <%= f.label :punctuality %><br>
+    <%= f.number_field :punctuality %>
   </div>
   <div class="field">
     <%= f.label :dealing %><br>
@@ -36,8 +36,12 @@
     <%= f.text_field :average %>
   </div>
   <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_area :comment %>
+    <%= f.label :worker_id %><br>
+    <%= f.number_field :worker_id %>
+  </div>
+  <div class="field">
+    <%= f.label :review %><br>
+    <%= f.text_field :review %>
   </div>
   <div class="actions">
     <%= f.submit %>

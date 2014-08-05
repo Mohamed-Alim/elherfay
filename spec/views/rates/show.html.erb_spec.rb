@@ -3,13 +3,14 @@ require 'rails_helper'
 RSpec.describe "rates/show", :type => :view do
   before(:each) do
     @rate = assign(:rate, Rate.create!(
-      :cleanliness => 1,
-      :quality => 2,
-      :price => 3,
-      :punctulity => 4,
+      :quality => 1,
+      :price => 2,
+      :cleanliness => 3,
+      :punctuality => 4,
       :dealing => 5,
       :average => "9.99",
-      :comment => "MyText"
+      :worker_id => 6,
+      :review => "Review"
     ))
   end
 
@@ -21,6 +22,7 @@ RSpec.describe "rates/show", :type => :view do
     expect(rendered).to match(/4/)
     expect(rendered).to match(/5/)
     expect(rendered).to match(/9.99/)
-    expect(rendered).to match(/MyText/)
+    expect(rendered).to match(/6/)
+    expect(rendered).to match(/Review/)
   end
 end

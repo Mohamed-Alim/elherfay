@@ -1,1 +1,1 @@
-json.extract! @rate, :id, :cleanliness, :quality, :price, :punctulity, :dealing, :average, :comment, :created_at, :updated_at
+json.extract! @rate, :id, :quality, :price, :cleanliness, :punctuality, :dealing, :average, :worker_id, :review, :created_at, :updated_at

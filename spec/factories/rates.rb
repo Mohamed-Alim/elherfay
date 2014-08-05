@@ -2,12 +2,13 @@
 
 FactoryGirl.define do
   factory :rate do
-    cleanliness 1
     quality 1
     price 1
-    punctulity 1
+    cleanliness 1
+    punctuality 1
     dealing 1
     average "9.99"
-    comment "MyText"
+    worker_id 1
+    review "MyString"
   end
 end

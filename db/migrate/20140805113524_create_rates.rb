@@ -1,13 +1,14 @@
 class CreateRates < ActiveRecord::Migration
   def change
     create_table :rates do |t|
-      t.integer :cleanliness
       t.integer :quality
       t.integer :price
-      t.integer :punctulity
+      t.integer :cleanliness
+      t.integer :punctuality
       t.integer :dealing
       t.decimal :average
-      t.text :comment
+      t.integer :worker_id
+      t.string :review
 
       t.timestamps
     end

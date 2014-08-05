@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Cleanliness:</strong>
-  <%= @rate.cleanliness %>
-</p>
-
-<p>
   <strong>Quality:</strong>
   <%= @rate.quality %>
 </p>
@@ -16,8 +11,13 @@
 </p>
 
 <p>
-  <strong>Punctulity:</strong>
-  <%= @rate.punctulity %>
+  <strong>Cleanliness:</strong>
+  <%= @rate.cleanliness %>
+</p>
+
+<p>
+  <strong>Punctuality:</strong>
+  <%= @rate.punctuality %>
 </p>
 
 <p>
@@ -31,8 +31,13 @@
 </p>
 
 <p>
-  <strong>Comment:</strong>
-  <%= @rate.comment %>
+  <strong>Worker:</strong>
+  <%= @rate.worker_id %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @rate.review %>
 </p>
 
 <%= link_to 'Edit', edit_rate_path(@rate) %> |
