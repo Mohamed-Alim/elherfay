@@ -17,7 +17,8 @@ end
   # GET /workers/new
   def new
     @worker = Worker.new
-    @rate = @worker.rates.build
+    @worker.rates.build
+    
   end
 
   # GET /workers/1/edit
@@ -72,6 +73,8 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:name, :telephone, :availability, :totalavg, :avcomment)
+      params.require(:worker).permit(:name, :telephone, :availability, :totalavg, :avcomment, 
+      :rates_attributes => [:price, :cleanliness, :dealing, :quality, :punctuality])
     end
+    
 end

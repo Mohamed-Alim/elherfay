@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<%if signed_in?%>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -32,7 +32,32 @@
     <%= f.text_field :totalavg %>
   </div>
   
+  
+   <%= f.fields_for :rates  do |rate_fields| %>
+   <div class="field">
+    <%= rate_fields.label :price %><br>
+    <%= rate_fields.text_field :price %>
+  </div>
+  <div class="field">
+    <%= rate_fields.label :quality %><br>
+    <%= rate_fields.text_field :quality %>
+  </div><div class="field">
+    <%= rate_fields.label :punctuality %><br>
+    <%= rate_fields.text_field :punctuality %>
+  </div><div class="field">
+    <%= rate_fields.label :cleanliness %><br>
+    <%= rate_fields.text_field :cleanliness %>
+  </div><div class="field">
+    <%= rate_fields.label :dealing %><br>
+    <%= rate_fields.text_field :dealing %>
+  </div>
+  <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+  <%else%>
+  <% flash[:notice]="Please Sign in"%>
+  <%end%>
+  
 <% end %>

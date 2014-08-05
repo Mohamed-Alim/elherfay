@@ -4,22 +4,24 @@ RSpec.describe "rates/index", :type => :view do
   before(:each) do
     assign(:rates, [
       Rate.create!(
-        :cleanliness => 1,
-        :quality => 2,
-        :price => 3,
-        :punctulity => 4,
+        :quality => 1,
+        :price => 2,
+        :cleanliness => 3,
+        :punctuality => 4,
         :dealing => 5,
         :average => "9.99",
-        :comment => "MyText"
+        :worker_id => 6,
+        :review => "Review"
       ),
       Rate.create!(
-        :cleanliness => 1,
-        :quality => 2,
-        :price => 3,
-        :punctulity => 4,
+        :quality => 1,
+        :price => 2,
+        :cleanliness => 3,
+        :punctuality => 4,
         :dealing => 5,
         :average => "9.99",
-        :comment => "MyText"
+        :worker_id => 6,
+        :review => "Review"
       )
     ])
   end
@@ -32,6 +34,7 @@ RSpec.describe "rates/index", :type => :view do
     assert_select "tr>td", :text => 4.to_s, :count => 2
     assert_select "tr>td", :text => 5.to_s, :count => 2
     assert_select "tr>td", :text => "9.99".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    assert_select "tr>td", :text => 6.to_s, :count => 2
+    assert_select "tr>td", :text => "Review".to_s, :count => 2
   end
 end
