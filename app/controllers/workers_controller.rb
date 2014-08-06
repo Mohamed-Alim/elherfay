@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class WorkersController < ApplicationController
   before_action :set_worker, only: [:show, :edit, :update, :destroy]
 def home
@@ -46,7 +48,7 @@ end
   def update
     respond_to do |format|
       if @worker.update(worker_params)
-        format.html { redirect_to @worker, notice: 'تم اضافة الفني بنجاح' }
+        format.html { redirect_to @worker, notice: 'تم تعديل بيانات الفني بنجاح' }
         format.json { render :show, status: :ok, location: @worker }
       else
         format.html { render :edit }
@@ -60,7 +62,7 @@ end
   def destroy
     @worker.destroy
     respond_to do |format|
-      format.html { redirect_to workers_url, notice: 'تم ازالة الفني ' }
+      format.html { redirect_to workers_url, notice: 'تمت ازالة الفني بنجاح ' }
       format.json { head :no_content }
     end
   end
