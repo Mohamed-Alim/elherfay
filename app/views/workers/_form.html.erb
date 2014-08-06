@@ -12,45 +12,43 @@
   <% end %>
 <%if signed_in?%>
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :الاسم %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :telephone %><br>
-    <%= f.number_field :telephone %>
+    <%= f.label :التليفون %><br>
+    <%= f.text_field :telephone %>
   </div>
   <div class="field">
-    <%= f.label :availability %><br>
+    <%= f.label :متاح %><br>
     <%= f.check_box :availability %>
   </div>
   <div class="field">
-    <%= f.label :availability_comment %><br>
+    <%= f.label :الحالة%><br>
     <%= f.text_field :avcomment %>
   </div>
-  <div class="field">
-    <%= f.label :total_average %><br>
-    <%= f.text_field :totalavg %>
-  </div>
   
   
+  <% if f.object.new_record? %>
    <%= f.fields_for :rates  do |rate_fields| %>
    <div class="field">
-    <%= rate_fields.label :price %><br>
-    <%= rate_fields.text_field :price %>
+    <%= rate_fields.label :السعر %><br>
+    <%= rate_fields.number_field :price, in: 1..10 %>
   </div>
   <div class="field">
-    <%= rate_fields.label :quality %><br>
-    <%= rate_fields.text_field :quality %>
+    <%= rate_fields.label :الجودة %><br>
+    <%= rate_fields.number_field :quality, in: 1..10 %>
   </div><div class="field">
-    <%= rate_fields.label :punctuality %><br>
-    <%= rate_fields.text_field :punctuality %>
+    <%= rate_fields.label :الالتزام %><br>
+    <%= rate_fields.number_field :punctuality, in: 1..10 %>
   </div><div class="field">
-    <%= rate_fields.label :cleanliness %><br>
-    <%= rate_fields.text_field :cleanliness %>
+    <%= rate_fields.label :النظافة %><br>
+    <%= rate_fields.number_field :cleanliness, in: 1..10 %>
   </div><div class="field">
-    <%= rate_fields.label :dealing %><br>
-    <%= rate_fields.text_field :dealing %>
+    <%= rate_fields.label :التعامل %><br>
+    <%= rate_fields.number_field :dealing, in: 1..10 %>
   </div>
+  <% end %>
   <% end %>
   
   <div class="actions">

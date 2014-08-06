@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,59 +8,64 @@
   <%= csrf_meta_tags %>
 </head>
 
+<div role="navigation">     
+	<div class="">    
+		<div class="row">
+			<div class="col-md-2">
+				<%= image_tag "itc.png", :style => "width:100px;height:100px"%>
+			</div>
+			<div class="col-md-6">
+			<h1 class="title" style="background: transparent; color: black;border-width: 0px">
+    The Human Foundation  
+			</h1>     
+			</div>     
+			<div class="col-md-4">
+		    <h1>
+		    	برنامج الحرفى المصرى
+		    </h1>
+		    </div>
+		   
+		 </div>
+		
+		</div>   
+	</div>
+
+
 <div class="navbar navbar-inverse navbar-ﬁxed-top" role="navigation">     
 	<div class="container">    
 		<div class="navbar-header">         
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar- collapse">          
-				 <span class="sr-only">Toggle navigation</span>          
-				 <span class="icon-bar"></span>           
-				 <span class="icon-bar"></span>           
-				 <span class="icon-bar"></span>         
-		    </button>
-		    
-		    <a><%= link_to "الرئيسية" , root_path, :class=>'navbar-brand' %></a>
-		          </div>
-			<div class="navbar-collapse collapse">         
-				<ul class="nav navbar-nav">   
-				 <li><%= link_to "عن المشروع" , '#'%></li>  
-				 <li><%= link_to "الفنيين" , workers_path %></li>  
-         
-				
-				<% if signed_in? %>
+		
+		 </div>
+		<div class="navbar-collapse collapse navbar-right">         
+			<ul class="nav navbar-nav"> 
+				  
+				 <% if signed_in? %>
 					<li id="fat-menu" class="dropdown">
-						<a href="a" class="dropdown-toggle"data-toggle="dropdown">
-							Account <b class="caret"></b>
+						<a href="a" class="dropdown-toggle navbar-brand"data-toggle="dropdown">
+						
+							الحساب <b class="caret " ></b>
 						</a>
 						<ul class="dropdown-menu">
 							<li><%= link_to "اضافة فني" , new_worker_path%></li>           
 					             
 							<li class="divider"></li>
 							<li>
-								<%= link_to "Sign out",destroy_admin_session_path , method: "delete" %>
+								<%= link_to "تسجيل خروج",destroy_admin_session_path , method: "delete" %>
 							</li>
 						</ul>
-					</ul> 
-				<% else %>
-					<li></li>
+					<% end %>
+
+						<li><%= link_to "الفنيين" , workers_path, :class=>'navbar-brand'%></li>
+				  		<li><%= link_to "عن المشروع" , '#', :class=>'navbar-brand' %></li>
+				  		<li><%= link_to "الرئيسية" , root_path, :class=>'navbar-brand' %></li>
 					</ul>   
-				<% end %>
+				 
+				 
+				
+				
 			</div><!--/.navbar-collapse -->     
 		</div>   
 	</div>
-
-</div>
-
-<!-- <div id="header-inner"  style="background-image: url('assets/itc.png'); background-position: left; width: 1000px; min-height: 200px; _height: 182px; background-repeat: no-repeat; "> --><div class="titlewrapper" style="background: transparent">
-<h1 class="title" style="background: transparent; border-width: 0px">
-  برنامج الحرفى المصرى  The Human Foundation
-</h1>
-</div>
-<div class="descriptionwrapper">
-<p class="description"><span>
-</span></p>
-</div>
-</div>
-
 
 
 
