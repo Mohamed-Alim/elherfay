@@ -1,6 +1,10 @@
+#encoding: utf-8
+
 class WorkersController < ApplicationController
   before_action :set_worker, only: [:show, :edit, :update, :destroy]
-
+def home
+  
+end
   # GET /workers
   # GET /workers.json
   def index
@@ -15,6 +19,8 @@ class WorkersController < ApplicationController
   # GET /workers/new
   def new
     @worker = Worker.new
+    @worker.rates.build
+    
   end
 
   # GET /workers/1/edit
@@ -28,7 +34,7 @@ class WorkersController < ApplicationController
 
     respond_to do |format|
       if @worker.save
-        format.html { redirect_to @worker, notice: 'Worker was successfully created.' }
+        format.html { redirect_to @worker, notice: 'تم اضافة الفني بنجاح' }
         format.json { render :show, status: :created, location: @worker }
       else
         format.html { render :new }
@@ -42,7 +48,7 @@ class WorkersController < ApplicationController
   def update
     respond_to do |format|
       if @worker.update(worker_params)
-        format.html { redirect_to @worker, notice: 'Worker was successfully updated.' }
+        format.html { redirect_to @worker, notice: 'تم تعديل بيانات الفني بنجاح' }
         format.json { render :show, status: :ok, location: @worker }
       else
         format.html { render :edit }
@@ -56,7 +62,7 @@ class WorkersController < ApplicationController
   def destroy
     @worker.destroy
     respond_to do |format|
-      format.html { redirect_to workers_url, notice: 'Worker was successfully destroyed.' }
+      format.html { redirect_to workers_url, notice: 'تمت ازالة الفني بنجاح ' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +75,8 @@ class WorkersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:name, :telephone, :availability, :totalavg, :avcomment)
+      params.require(:worker).permit(:name, :telephone, :availability, :totalavg, :avcomment, 
+      :rates_attributes => [:price, :cleanliness, :dealing, :quality, :punctuality])
     end
+    
 end

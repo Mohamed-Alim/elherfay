@@ -1,0 +1,30 @@
+@import "bootstrap";
+
+html{
+  overflow-y:scroll;
+  direction:  rtl;
+}
+
+body {
+  // background-image: url('ttt.png');
+  padding-left: 20px;
+  padding-right: 20px;
+}
+//$navbar-inverse-bg: #FFFFFF;
+$navbar-inverse-border: #000000;
+
+.navbar-inverse {
+background-color: $navbar-inverse-bg;
+border-color: $navbar-inverse-border;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+td ,th{
+    padding: 15px;
+}
