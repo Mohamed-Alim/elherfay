@@ -1,13 +1,9 @@
 class Rate < ActiveRecord::Base
-   def create
-    Rate.create(rate_params)
-  end
+  validates_numericality_of :quality, :in => 1..10
+  validates :price,  presence: true, length: {minimum: 1, maximum: 10}
+  validates :dealing,  presence: true, length: {minimum: 1, maximum: 10}
+  validates :cleanliness,  presence: true, length: {minimum: 1, maximum: 10}
+  validates :punctality,  presence: true, length: {minimum: 1, maximum: 10}
 
-  private
-
-  def rate_params
-    params.require(:rate).permit(:quality, :cleanliness, :dealing, :price, :punctuality, :Review)
-  end
-  
   belongs_to :worker
 end
