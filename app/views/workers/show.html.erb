@@ -19,6 +19,29 @@
   <%= @worker.avcomment %>
 </p>
 
-
+<p>
+  <strong>المنطقه:</strong>
+  <%= @worker.my_column %>
+</p>
+<p>
+  <strong>تقييم السعر:</strong>
+  <%= @worker.average_price %>
+</p>
+<p>
+  <strong>تقييم الجوده:</strong>
+  <%= @worker.average_quality %>
+</p>
+<p>
+  <strong>تقييم الانضباط:</strong>
+  <%= @worker.average_punctuality %>
+</p>
+<p>
+  <strong>تقييم التعامل:</strong>
+  <%= @worker.average_dealing %>
+</p>
+<p>
+  <strong>تقييم النظافه:</strong>
+  <%= @worker.average_cleanliness %>
+</p>
 <%= link_to 'Edit', edit_worker_path(@worker) %> |
 <%= link_to 'Back', workers_path %>

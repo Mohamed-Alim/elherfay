@@ -9,6 +9,12 @@
       <th> التقييم </th>
       <th> التعليق </th>
       <th> المنطقه </th>
+      <th> تقييم السعر </th>
+      <th> تقييم الجوده </th>
+      <th> تقييم الانضباط </th>
+      <th> تقييم التعامل </th>
+      <th> تقييم النظافه </th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +28,12 @@
         <td><%= worker.totalavg %></td>
         <td><%= worker.avcomment %></td>
         <td><%= worker.my_column %></td>
+        <td><%= worker.average_price %></td>
+        <td><%= worker.average_quality %></td>
+        <td><%= worker.average_punctuality %></td>
+        <td><%= worker.average_dealing %></td>
+        <td><%= worker.average_cleanliness %></td>
+
         <td><%= link_to 'Show', worker %></td>
         <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
         <td><%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
