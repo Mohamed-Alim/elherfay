@@ -8,7 +8,7 @@ end
   # GET /workers
   # GET /workers.json
   def index
-    @workers = Worker.all
+    @workers = Worker.all.sort{|x,y| x.total_average <=> y.total_average}.reverse
   end
 
   # GET /workers/1
@@ -76,7 +76,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:name, :telephone, :availability, :totalavg, :avcomment, 
+      params.require(:worker).permit(:name, :telephone, :availability, :totalavg, :avcomment, :my_column,
       :rates_attributes => [:price, :cleanliness, :dealing, :quality, :punctuality])
     end
     
