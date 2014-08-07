@@ -8,6 +8,7 @@
       <th>  متاح  </th>
       <th> التقييم </th>
       <th> التعليق </th>
+      <th> المنطقه </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= worker.availability %></td>
         <td><%= worker.totalavg %></td>
         <td><%= worker.avcomment %></td>
+        <td><%= worker.my_column %></td>
         <td><%= link_to 'Show', worker %></td>
         <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
         <td><%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>

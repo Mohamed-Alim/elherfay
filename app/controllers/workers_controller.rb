@@ -14,6 +14,7 @@ end
   # GET /workers/1
   # GET /workers/1.json
   def show
+    @total_average = @worker.total_average
   end
 
   # GET /workers/new
