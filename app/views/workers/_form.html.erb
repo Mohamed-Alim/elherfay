@@ -33,7 +33,10 @@
     <%= f.label :المنطقه%><br>
     <%= f.text_field :my_column %>
   </div>
-  
+  <div class="field">
+    <%= f.label :نوع_الحرفة%><br>
+    <%= f.text_field :type %>
+  </div>
   
   <% if f.object.new_record? %>
    <%= f.fields_for :rates  do |rate_fields| %>
@@ -53,6 +56,10 @@
   </div><div class="field">
     <%= rate_fields.label :التعامل %><br>
     <%= rate_fields.number_field :dealing, in: 1..10 %>
+  </div>
+  </div><div class="field">
+    <%= rate_fields.label :تعليق %><br>
+    <%= rate_fields.text_field :comment%>
   </div>
   <% end %>
   <% end %>

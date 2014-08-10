@@ -6,6 +6,8 @@ class CreateWorkers < ActiveRecord::Migration
       t.boolean :availability
       t.decimal :totalavg
       t.string :avcomment
+      t.string :my_column
+      t.string :type
 
       t.timestamps
     end

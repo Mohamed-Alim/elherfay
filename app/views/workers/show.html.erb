@@ -24,6 +24,10 @@
   <%= @worker.my_column %>
 </p>
 <p>
+  <strong>نوع الحرفة:</strong>
+  <%= @worker.type %>
+</p>
+<p>
   <strong>تقييم السعر:</strong>
   <%= @worker.average_price %>
 </p>
@@ -43,5 +47,11 @@
   <strong>تقييم النظافه:</strong>
   <%= @worker.average_cleanliness %>
 </p>
+<p>
+  <strong>التعليقات:</strong>
+  <%= @worker.comment %>
+</p>
+<% if signed_in?%>
 <%= link_to 'Edit', edit_worker_path(@worker) %> |
+<%end%>
 <%= link_to 'Back', workers_path %>

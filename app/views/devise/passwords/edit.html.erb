@@ -4,10 +4,10 @@
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div><%= f.label :كلمة_المرور, "N كلمة المرور الجديدة" %><br />
+  <div><%= f.label :كلمة_المرور, " كلمة المرور الجديدة" %><br />
     <%= f.password_field :password, autofocus: true, autocomplete: "off" %></div>
 
-  <div><%= f.label :تأكيد_كلمة_المرور, " C تأكيد كلمة المرور" %><br />
+  <div><%= f.label :تأكيد_كلمة_المرور, " تأكيد كلمة المرور" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
   <div><%= f.submit "تغيير كلمة المرور" %></div>
