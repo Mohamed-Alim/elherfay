@@ -1,70 +1,74 @@
+
+
 <%= form_for(@worker) do |f| %>
   <% if @worker.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@worker.errors.count, "error") %> prohibited this worker from being saved:</h2>
-
       <ul>
-      <% @worker.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+      	<% @worker.errors.full_messages.each do |message| %>
+        	<li><%= message %></li>
+     	 <% end %>
       </ul>
     </div>
   <% end %>
-<%if signed_in?%>
-  <div class="field">
-  	<span style="color:black;font-weight: normal; font-size:10px; ">
-    <%= f.label :الاسم %><br>
-    </span>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :التليفون %><br>
-    <%= f.text_field :telephone %>
-  </div>
-  <div class="field">
-    <%= f.label :متاح %><br>
-    <%= f.check_box :availability %>
-  </div>
-  <div class="field">
-    <%= f.label :الحالة%><br>
-    <%= f.text_field :avcomment %>
-  </div>
-  <div class="field">
-    <%= f.label :المنطقه%><br>
-    <%= f.text_field :my_column %>
-  </div>
-  <div class="field">
-    <%= f.label :نوع_الحرفة%><br>
-    <%= f.text_field :type %>
-  </div>
-  
-  <% if f.object.new_record? %>
-   <%= f.fields_for :rates  do |rate_fields| %>
-   <div class="field">
-    <%= rate_fields.label :السعر %><br>
-    <%= rate_fields.number_field :price, in: 1..10 %>
-  </div>
-  <div class="field">
-    <%= rate_fields.label :الجودة %><br>
-    <%= rate_fields.number_field :quality, in: 1..10 %>
-  </div><div class="field">
-    <%= rate_fields.label :الالتزام %><br>
-    <%= rate_fields.number_field :punctuality, in: 1..10 %>
-  </div><div class="field">
-    <%= rate_fields.label :النظافة %><br>
-    <%= rate_fields.number_field :cleanliness, in: 1..10 %>
-  </div><div class="field">
-    <%= rate_fields.label :التعامل %><br>
-    <%= rate_fields.number_field :dealing, in: 1..10 %>
-  </div>
-  </div><div class="field">
-  	    
-    <%= rate_fields.label :تعليق %><br>
-    <%= rate_fields.text_area :comment %>
-    
-  </div>
-  <% end %>
-  <% end %>
+  <%if signed_in?%>
+	<div class="row">
+  		<div class="col-md-6">
+  			<% if f.object.new_record? %>
+   				<%= f.fields_for :rates  do |rate_fields| %>
+   					<div class="field">
+    					<%= rate_fields.label :السعر %><br>
+    					<%= rate_fields.number_field :price, in: 1..5 %>
+  					</div>
+  					<div class="field">
+    					<%= rate_fields.label :الجودة %><br>
+    					<%= rate_fields.number_field :quality, in: 1..5 %>
+  					</div>
+  					<div class="field">
+    					<%= rate_fields.label :الالتزام %><br>
+    					<%= rate_fields.number_field :punctuality, in: 1..5 %>
+  					</div>
+  					<div class="field">
+    					<%= rate_fields.label :النظافة %><br>
+    					<%= rate_fields.number_field :cleanliness, in: 1..5 %>
+  					</div>
+  					<div class="field">
+    					<%= rate_fields.label :التعامل %><br>
+    					<%= rate_fields.number_field :dealing, in: 1..5 %>
+ 					</div>
+ 				<% end %>
+ 			<% end %>
+  		</div>
+  		<div class="col-md-6">
+  			<div class="field">
+  				<span style="color:black;font-weight: normal; font-size:10px; ">
+    				<%= f.label :الاسم %><br>
+    			</span>
+    			<%= f.text_field :name %>
+  			</div>
+  			<div class="field">
+   	 			<%= f.label :التليفون %><br>
+    			<%= f.text_field :telephone %>
+  			</div>
+  			<div class="field">
+    			<%= f.label :متاح %><br>
+    			<%= f.check_box :availability %>
+  			</div>
+  			<div class="field">
+    			<%= f.label :الحالة%><br>
+    			<%= f.text_field :avcomment %>
+  			</div>
+  			<div class="field">
+    			<%= f.label :المنطقه%><br>
+    			<%= f.text_field :region %>
+  			</div>
+  			<div class="field">
+    			<%= f.label :نوع_الحرفة%><br>
+    			<%= f.text_field :worker_type %>
+ 			</div>
+  		</div>
+  	</div>
+ 
   
   <div class="actions">
     <%= f.submit %>
@@ -74,3 +78,4 @@
   <%end%>
   
 <% end %>
+

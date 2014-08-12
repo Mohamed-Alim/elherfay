@@ -2,35 +2,41 @@
 <h1>قائمة الفنيين</h1>
 <% @workers.each do |worker| %>
 
-	<div class="row">
+	<div class="well">
 		<div class="col-sm-6 col-lg-3">
-			<h2> تقييم السعر </h2>
-      		<h2> تقييم الجوده </h2>
-      		<h2> تقييم الانضباط </h2>
-      		<h2> تقييم التعامل </h2>
-     	 	<h2> تقييم النظافه </h2>
+			<h2> تقييم السعر   : <%= worker.average_price %></h2>
+      		<h2> تقييم الجوده  : <%= worker.average_quality %></h2>
+      		<h2> تقييم الانضباط : <%= worker.average_punctuality %></h2>
+      		<h2> تقييم التعامل : <%= worker.average_dealing %></h2>
+     	 	<h2> تقييم النظافه : <%= worker.average_cleanliness %></h2>
 		</div>
 		<div class:"col-sm-6 col-lg-3">
-			<h2>الاسم</h2><h4><%= worker.name %></h4>
-      		<h2>  التليفون </h2><%= worker.telephone %>
-      		<h2>  متاح  </h2><%= worker.availability %>
-     		<h2> المنطقه </h2><%= worker.region %>
+			<h2><%= worker.worker_type%> : <%= worker.name %></h2>
+      		<h2>  التليفون : <%= worker.telephone %></h2>
+      		<% if worker.availability?%>
+      		
+      		
+      		<h2>  متاح  : نعم,<%= worker.avcomment%></h2>
+      		<%else%>
+      		<h2>  متاح  : لا,<%= worker.avcomment%></h2>
+
+      		<%end%>
+     		<h2> المنطقه : <%= worker.region %></h2>
 
      	 </div>
-     </div>
-     <div class="row">
-     	      <h2> التعليقات </h2><%=worker.comment%>
-	</div>
-	<div class="row">
-		<td><%= link_to 'Show', worker %></td>
+     
+     	      
+	
+		<%= link_to 'Show', worker %>
 		<%if signed_in?%>
         	<%= link_to 'Edit', edit_worker_path(worker) %>
         	<%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %>
       	<%end%>
-      
-</div>
+      </div>
+
 <%end%>
-<table>
+</div>
+<!-- <table>
   <thead>
     <tr>
       <th>  الاسم </th>
@@ -74,5 +80,5 @@
   </tbody>
 </table>
 
-<br>
+<br> -->
 
