@@ -9,7 +9,6 @@ class CreateRates < ActiveRecord::Migration
       t.decimal :average
       t.integer :worker_id
       t.string :review
-      t.text :comment
 
       t.timestamps
     end

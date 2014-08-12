@@ -58,8 +58,10 @@
     <%= rate_fields.number_field :dealing, in: 1..10 %>
   </div>
   </div><div class="field">
+  	    
     <%= rate_fields.label :تعليق %><br>
-    <%= rate_fields.text_field :comment%>
+    <%= rate_fields.text_area :comment %>
+    
   </div>
   <% end %>
   <% end %>

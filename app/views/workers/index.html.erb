@@ -1,5 +1,35 @@
+<div class="container-fluid">
 <h1>قائمة الفنيين</h1>
+<% @workers.each do |worker| %>
 
+	<div class="row">
+		<div class="col-sm-6 col-lg-3">
+			<h2> تقييم السعر </h2>
+      		<h2> تقييم الجوده </h2>
+      		<h2> تقييم الانضباط </h2>
+      		<h2> تقييم التعامل </h2>
+     	 	<h2> تقييم النظافه </h2>
+		</div>
+		<div class:"col-sm-6 col-lg-3">
+			<h2>الاسم</h2><h4><%= worker.name %></h4>
+      		<h2>  التليفون </h2><%= worker.telephone %>
+      		<h2>  متاح  </h2><%= worker.availability %>
+     		<h2> المنطقه </h2><%= worker.region %>
+
+     	 </div>
+     </div>
+     <div class="row">
+     	      <h2> التعليقات </h2><%=worker.comment%>
+	</div>
+	<div class="row">
+		<td><%= link_to 'Show', worker %></td>
+		<%if signed_in?%>
+        	<%= link_to 'Edit', edit_worker_path(worker) %>
+        	<%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %>
+      	<%end%>
+      
+</div>
+<%end%>
 <table>
   <thead>
     <tr>
@@ -27,7 +57,7 @@
         <td><%= worker.availability %></td>
         <td><%= worker.totalavg %></td>
         <td><%= worker.avcomment %></td>
-        <td><%= worker.my_column %></td>
+        <td><%= worker.region %></td>
         <td><%= worker.average_price %></td>
         <td><%= worker.average_quality %></td>
         <td><%= worker.average_punctuality %></td>
@@ -35,8 +65,10 @@
         <td><%= worker.average_cleanliness %></td>
 
         <td><%= link_to 'Show', worker %></td>
+        <%if signed_in?%>
         <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
         <td><%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%end%>
       </tr>
     <% end %>
   </tbody>

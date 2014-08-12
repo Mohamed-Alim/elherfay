@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810113607) do
+ActiveRecord::Schema.define(version: 20140810120200) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -42,19 +42,19 @@ ActiveRecord::Schema.define(version: 20140810113607) do
     t.string   "review"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "type"
+    t.text     "comment"
   end
 
   create_table "workers", force: true do |t|
     t.string   "name"
-    t.integer  "telephone"
+    t.string   "telephone"
     t.boolean  "availability"
     t.decimal  "totalavg"
     t.string   "avcomment"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "my_column"
-    t.string   "type"
+    t.string   "region"
+    t.string   "worker_type"
   end
 
 end

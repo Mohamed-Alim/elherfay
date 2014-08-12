@@ -69,6 +69,6 @@ class RatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rate_params
-      params.require(:rate).permit(:quality, :price, :cleanliness, :punctuality, :dealing, :average, :worker_id, :review)
+      params.require(:rate).permit(:quality, :price, :cleanliness, :punctuality, :dealing, :average, :worker_id, :review, :comment)
     end
 end

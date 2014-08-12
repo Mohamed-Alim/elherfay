@@ -2,8 +2,8 @@ class Worker < ActiveRecord::Base
 
 validates :name, presence: true
 validates :telephone, presence: true
-validates :my_column, presence: true
-validates :type, presence: true
+validates :region, presence: true
+validates :worker_type, presence: true
 has_many :rates, :dependent => :destroy
 
 accepts_nested_attributes_for :rates
@@ -34,6 +34,9 @@ end
 def average_cleanliness
   n = Rate.where(:worker_id => self.id).average('cleanliness')
 end
+
+def comment
   
+end
 end
 

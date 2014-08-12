@@ -2,13 +2,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Elherafy</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+	
+	<title>Elherafy</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 
-<div role="navigation">     
+
+
+<body>
+
+
+<!-- <div role="navigation">     
 	<div class="">    
 		<div class="row">
 			<div class="col-xs-12">
@@ -30,7 +42,7 @@
 		 </div>
 		
 		</div>   
-	</div>
+	</div> -->
 
 
 <div class="navbar navbar-inverse navbar-ﬁxed-top" role="navigation">     
@@ -42,9 +54,10 @@
 				 <span class="icon-bar"></span>           
 				 <span class="icon-bar"></span>         
 		    </button>
+		    <a class="navbar-brand" href="#">Project name</a>
 		 </div>
-		<div class="navbar-collapse collapse navbar-right">         
-			<ul class="nav navbar-nav"> 
+		<div class="collapse navbar-collapse bs-navbar-collapse">         
+			<ul class="nav navbar-nav navbar-right"> 
 				  
 				 <% if signed_in? %>
 					<li id="fat-menu" class="dropdown">
@@ -60,11 +73,12 @@
 								<%= link_to "تسجيل خروج",destroy_admin_session_path , method: "delete" %>
 							</li>
 						</ul>
+						</li>
 					<% end %>
 
-						<li><%= link_to "الفنيين" , workers_path, :class=>'navbar-brand'%></li>
-				  		<li><%= link_to "عن المشروع" , '#', :class=>'navbar-brand' %></li>
-				  		<li><%= link_to "الرئيسية" , root_path, :class=>'navbar-brand' %></li>
+						<li><%= link_to "الفنيين" , workers_path%></li>
+				  		<li><%= link_to "عن المشروع" , '#' %></li>
+				  		<li><%= link_to "الرئيسية" , root_path %></li>
 					</ul>   
 				 
 				 
@@ -74,9 +88,6 @@
 		</div>   
 	</div>
 
-
-
-<body>
 
 <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
