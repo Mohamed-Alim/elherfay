@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   
   root :to => 'workers#home'
 
-  resources :rates
 
-  resources :workers
+  resources :workers do
+     resources :rates
+  end
 
   devise_for :admins
   

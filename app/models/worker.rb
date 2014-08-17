@@ -35,8 +35,5 @@ def average_cleanliness
   n = Rate.where(:worker_id => self.id).average('cleanliness').round
 end
 
-def comment
-  
-end
 end
 
