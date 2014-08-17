@@ -19,7 +19,8 @@ class RatesController < ApplicationController
   def new
     @rate = @worker.rates.build
   end
-
+  
+  
   # GET /rates/1/edit
   def edit
   end
@@ -71,7 +72,7 @@ class RatesController < ApplicationController
     end
 
     def set_worker
-      @worker= Worker.find(params[:worker_id])
+      @worker=Worker.find(params[:worker_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
