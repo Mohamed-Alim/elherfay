@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
   
   root :to => 'workers#home'
-  get 'evaluate' => 'workers#evaluate'
 
-  resources :rates
 
-  resources :workers
-  resources :worker do
-   member do
-       get 'evaluate'
-   end
+  resources :workers do
+      resources :rates
+ 
   end
   devise_for :admins
   
