@@ -68,6 +68,7 @@
         <%if signed_in?%>
         <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
         <td><%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
       <%end%>
       </tr>
     <% end %>
