@@ -16,7 +16,8 @@ class RatesController < ApplicationController
   def new
     @rate = Rate.new
   end
-
+  
+  
   # GET /rates/1/edit
   def edit
   end

@@ -27,6 +27,10 @@ end
   # GET /workers/1/edit
   def edit
   end
+  
+  def evaluate
+    @rate=Rate.new
+  end
 
   # POST /workers
   # POST /workers.json

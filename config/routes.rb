@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   
   root :to => 'workers#home'
+  get 'evaluate' => 'workers#evaluate'
 
   resources :rates
 
   resources :workers
-
+  resources :worker do
+   member do
+       get 'evaluate'
+   end
+  end
   devise_for :admins
   
   # The priority is based upon order of creation: first created -> highest priority.

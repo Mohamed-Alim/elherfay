@@ -28,6 +28,7 @@
      	      
 	
 		<%= link_to 'Show', worker %>
+		<%= link_to 'Evaluate', evaluate_path(worker)%>
 		<%if signed_in?%>
         	<%= link_to 'Edit', edit_worker_path(worker) %>
         	<%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %>

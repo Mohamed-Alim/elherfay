@@ -1,0 +1,56 @@
+
+
+<%= form_for(@rate) do |f| %>
+  <% if @rate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rate.errors.count, "error") %> prohibited this worker from being saved:</h2>
+      <ul>
+      	<% @rate.errors.full_messages.each do |message| %>
+        	<li><%= message %></li>
+     	 <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<div class="row">
+  		<div class="col-md-6">
+  			<% if f.object.new_record? %>
+   				<%= f.fields_for :rates  do |rate_fields| %>
+   					<div class="field">
+    					<%= rate_fields.label :السعر %><br>
+    					<%= rate_fields.number_field :price, in: 1..5 %>
+  					</div>
+  					<div class="field">
+    					<%= rate_fields.label :الجودة %><br>
+    					<%= rate_fields.number_field :quality, in: 1..5 %>
+  					</div>
+  					<div class="field">
+    					<%= rate_fields.label :الالتزام %><br>
+    					<%= rate_fields.number_field :punctuality, in: 1..5 %>
+  					</div>
+  					<div class="field">
+    					<%= rate_fields.label :النظافة %><br>
+    					<%= rate_fields.number_field :cleanliness, in: 1..5 %>
+  					</div>
+  					<div class="field">
+    					<%= rate_fields.label :التعامل %><br>
+    					<%= rate_fields.number_field :dealing, in: 1..5 %>
+ 					</div>
+ 					<div class="field">
+ 						<%= rate_fields.label :التعليق%><br>
+ 						<%= rate_fields.text_field :comment%>
+ 						</div>
+ 				<% end %>
+ 			<% end %>
+  		</div>
+  		
+  		</div>
+  
+ 
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+  <%end%>
+
+
