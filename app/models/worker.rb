@@ -20,19 +20,19 @@ def total_average
   end
   
 def average_price
-  x = Rate.where(:worker_id => self.id).average('price')
+  x = Rate.where(:worker_id => self.id).average('price').round
 end
 def average_quality
-  y = Rate.where(:worker_id => self.id).average('quality')
+  y = Rate.where(:worker_id => self.id).average('quality').round
 end
 def average_punctuality
-  z = Rate.where(:worker_id => self.id).average('punctuality')
+  z = Rate.where(:worker_id => self.id).average('punctuality').round
 end
 def average_dealing
-  m = Rate.where(:worker_id => self.id).average('dealing')
+  m = Rate.where(:worker_id => self.id).average('dealing').round
 end
 def average_cleanliness
-  n = Rate.where(:worker_id => self.id).average('cleanliness')
+  n = Rate.where(:worker_id => self.id).average('cleanliness').round
 end
 
 def comment

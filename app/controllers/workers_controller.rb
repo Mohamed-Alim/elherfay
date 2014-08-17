@@ -76,7 +76,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:name, :telephone, :availability, :totalavg, :avcomment, :my_column, :type,
+      params.require(:worker).permit(:name, :telephone, :availability, :totalavg, :avcomment, :region, :worker_type,
       :rates_attributes => [:price, :cleanliness, :dealing, :quality, :punctuality, :comment])
     end
     
