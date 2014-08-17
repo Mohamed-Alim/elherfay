@@ -1,17 +1,17 @@
 <div class="container-fluid">
 <h1>قائمة الفنيين</h1>
 <% @workers.each do |worker| %>
-
+	<% output = worker.average_all%>
 	<div class="well">
 		<div class="col-sm-6 col-lg-3">
-			<h2> تقييم السعر   : <%= worker.average_price %></h2>
-      		<h2> تقييم الجوده  : <%= worker.average_quality %></h2>
-      		<h2> تقييم الانضباط : <%= worker.average_punctuality %></h2>
-      		<h2> تقييم التعامل : <%= worker.average_dealing %></h2>
-     	 	<h2> تقييم النظافه : <%= worker.average_cleanliness %></h2>
+			<h2> تقييم السعر   : <%= output[0] %></h2>
+      		<h2> تقييم الجوده  : <%= output[1] %></h2>
+      		<h2> تقييم الانضباط : <%= output[2] %></h2>
+      		<h2> تقييم التعامل : <%= output[3] %></h2>
+     	 	<h2> تقييم النظافه : <%= output[4] %></h2>
 		</div>
 		<div class:"col-sm-6 col-lg-3">
-			<h2><%= worker.worker_type%> : <%= worker.name %></h2>
+			<h2>فني <%= worker.worker_type%> : <%= worker.name %></h2>
       		<h2>  التليفون : <%= worker.telephone %></h2>
       		<% if worker.availability?%>
       		
@@ -37,50 +37,3 @@
 
 <%end%>
 </div>
-<!-- <table>
-  <thead>
-    <tr>
-      <th>  الاسم </th>
-      <th>  التليفون </th>
-      <th>  متاح  </th>
-      <th> التقييم </th>
-      <th> التعليق </th>
-      <th> المنطقه </th>
-      <th> تقييم السعر </th>
-      <th> تقييم الجوده </th>
-      <th> تقييم الانضباط </th>
-      <th> تقييم التعامل </th>
-      <th> تقييم النظافه </th>
-
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @workers.each do |worker| %>
-      <tr>
-        <td><%= worker.name %></td>
-        <td><%= worker.telephone %></td>
-        <td><%= worker.availability %></td>
-        <td><%= worker.totalavg %></td>
-        <td><%= worker.avcomment %></td>
-        <td><%= worker.region %></td>
-        <td><%= worker.average_price %></td>
-        <td><%= worker.average_quality %></td>
-        <td><%= worker.average_punctuality %></td>
-        <td><%= worker.average_dealing %></td>
-        <td><%= worker.average_cleanliness %></td>
-
-        <td><%= link_to 'Show', worker %></td>
-        <%if signed_in?%>
-        <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
-        <td><%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        
-      <%end%>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br> -->
-

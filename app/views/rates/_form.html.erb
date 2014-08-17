@@ -10,33 +10,31 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= f.label :السعر %><br>
+    <%= f.number_field :price , in: 1..5%>
+  </div>
+  <div class="field">
+    <%= f.label :الجودة %><br>
+    <%= f.number_field :quality , in: 1..5%>
+  </div>
+  <div class="field">
+    <%= f.label :الانضباط %><br>
+    <%= f.number_field :punctuality , in: 1..5%>
+  </div>
+  <div class="field">
+    <%= f.label :التعامل %><br>
+    <%= f.number_field :dealing, in: 1..5 %>
+  </div>
+  <div class="field">
+    <%= f.label :النظافة %><br>
+    <%= f.number_field :cleanliness , in: 1..5%>
+  </div>
 
+
+  
   <div class="field">
-    <%= f.label :quality %><br>
-    <%= f.number_field :quality %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :cleanliness %><br>
-    <%= f.number_field :cleanliness %>
-  </div>
-  <div class="field">
-    <%= f.label :punctuality %><br>
-    <%= f.number_field :punctuality %>
-  </div>
-  <div class="field">
-    <%= f.label :dealing %><br>
-    <%= f.number_field :dealing %>
-  </div>
-  <div class="field">
-    <%= f.label :average %><br>
-    <%= f.text_field :average %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br>
+    <%= f.label :التعليق %><br>
     <%= f.text_field :comment %>
   </div>
   <div class="actions">

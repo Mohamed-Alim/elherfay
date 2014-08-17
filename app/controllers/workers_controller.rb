@@ -8,7 +8,7 @@ end
   # GET /workers
   # GET /workers.json
   def index
-    @workers = Worker.sort{|x,y| x.total_average <=> y.total_average}.reverse
+    @workers = Worker.includes(:rates).sort{|x,y| x.total_average <=> y.total_average}.reverse
   end
 
   # GET /workers/1
