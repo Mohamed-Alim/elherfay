@@ -16,8 +16,8 @@ html{
 
 body {
   // background-image: url('xaml4.png');
-  background-size: 1000px 700px;
-  background-repeat: no-repeat;
+  //background-size: 1000px 700px;
+  //background-repeat: no-repeat;
 }
 
 
@@ -39,14 +39,14 @@ textarea {
   height:50px;
 }
 
-.container-fluid {
-  .row{
-    margin-left: 40px;
-    margin-right:40px;
-    border: 1px solid #888;
-    border-radius:3px;
-  }
-}
+// .container-fluid {
+  // .row{
+    // margin-left: 40px;
+    // margin-right:40px;
+    // border: 1px solid #888;
+    // border-radius:3px;
+  // }
+// }
 strong{
     display: block;
   }
