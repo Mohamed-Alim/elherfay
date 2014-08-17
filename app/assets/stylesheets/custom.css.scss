@@ -50,3 +50,20 @@ textarea {
 strong{
     display: block;
   }
+ .navbar{
+    background-color:   #33008F ;
+    background-image: linear-gradient(Teal);
+    background-repeat: repeat-x;
+    border: 1px solid gray;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    min-height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.navbar .nav > li > a, .navbar .nav > li > a {
+color:          gray;
+text-shadow:    black;
+font-size: 20px
+}
+
