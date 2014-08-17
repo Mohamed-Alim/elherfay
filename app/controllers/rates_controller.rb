@@ -1,5 +1,7 @@
 #encoding: utf-8
+
 class RatesController < ApplicationController
+  before_action :set_worker
   before_action :set_rate, only: [:show, :edit, :update, :destroy]
 
   # GET /rates
@@ -15,7 +17,7 @@ class RatesController < ApplicationController
 
   # GET /rates/new
   def new
-    @rate = Rate.new
+    @rate = @worker.rates.build
   end
   
   
@@ -30,7 +32,7 @@ class RatesController < ApplicationController
 
     respond_to do |format|
       if @rate.save
-        format.html { redirect_to @rate, notice: 'تم اضافة التقييم بنجاح' }
+        format.html { redirect_to worker_path(@worker), notice: 'تم اضافة التقييم بنجاح' }
         format.json { render :show, status: :created, location: @rate }
       else
         format.html { render :new }
@@ -68,9 +70,11 @@ class RatesController < ApplicationController
     def set_rate
       @rate = Rate.find(params[:id])
     end
+
     def set_worker
       @worker=Worker.find(params[:worker_id])
     end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def rate_params
       params.require(:rate).permit(:quality, :price, :cleanliness, :punctuality, :dealing, :average, :worker_id, :review, :comment)

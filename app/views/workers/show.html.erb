@@ -38,7 +38,11 @@
 
 <p>
   <strong>التعليقات:</strong>
-  <%= @worker.comment %>
+  <% @worker.rates.each do |rate| %>
+    <p><%= rate.comment %></p>
+  <% end %>
+
+
 </p>
 <% if signed_in?%>
 <%= link_to 'Edit', edit_worker_path(@worker) %> |

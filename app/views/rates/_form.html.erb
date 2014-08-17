@@ -1,4 +1,4 @@
-<%= form_for(@rate) do |f| %>
+<%= form_for([@worker,@rate]) do |f| %>
   <% if @rate.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@rate.errors.count, "error") %> prohibited this rate from being saved:</h2>
@@ -36,12 +36,8 @@
     <%= f.text_field :average %>
   </div>
   <div class="field">
-    <%= f.label :worker_id %><br>
-    <%= f.number_field :worker_id %>
-  </div>
-  <div class="field">
-    <%= f.label :review %><br>
-    <%= f.text_field :review %>
+    <%= f.label :comment %><br>
+    <%= f.text_field :comment %>
   </div>
   <div class="actions">
     <%= f.submit %>

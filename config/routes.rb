@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   
   root :to => 'workers#home'
 
-
+ 
   resources :workers do
       resources :rates
- 
   end
+  
   devise_for :admins
   
   # The priority is based upon order of creation: first created -> highest priority.
