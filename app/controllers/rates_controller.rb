@@ -3,6 +3,7 @@
 class RatesController < ApplicationController
   before_action :set_worker
   before_action :set_rate, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :authenticate_admin!, only: [:new, :create]
 
   # GET /rates
   # GET /rates.json
