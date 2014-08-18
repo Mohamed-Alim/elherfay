@@ -54,7 +54,7 @@
 				 <span class="icon-bar"></span>           
 				 <span class="icon-bar"></span>         
 		    </button>
-		    <a class="navbar-brand" href="#"> الحرفى المصرى </a>
+		    <a class="navbar-brand" >الحرفى المصرى</a>
 		 </div>
 		<div class="collapse navbar-collapse bs-navbar-collapse">         
 			<ul class="nav navbar-nav navbar-right"> 
@@ -75,10 +75,14 @@
 						</ul>
 						</li>
 					<% end %>
-
+						<li><%= link_to "للتواصل",contact_path%>
+						<li><%= link_to "خطوات المشروع",steps_path%>
+						<li><%= link_to "مجلس التدريب الصناعي", "http://itcegypt.eg/"%>
+						<li><%= link_to "مؤسسة بناء الانسان و التنمية", "http://www.hfegypt.org/"%></li>
 						<li><%= link_to "الفنيين" , workers_path%></li>
-				  		<li><%= link_to "عن المشروع" , '#' %></li>
+				  		<li><%= link_to "عن المشروع" , about_path %></li>
 				  		<li><%= link_to "الرئيسية" , root_path %></li>
+				  		
 					</ul>   
 				 
 				 

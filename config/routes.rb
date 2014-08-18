@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   
   root :to => 'workers#home'
-
+  get '/about' => 'workers#about'
+  get'/contact'=> 'workers#contact'
+  get '/steps' => 'workers#steps'
+  
 
   resources :workers do
      resources :rates
