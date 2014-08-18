@@ -1,10 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe "Workers", :type => :request do
-  describe "GET /workers" do
-    it "works! (now write some real specs)" do
-      get workers_path
-      expect(response.status).to be(200)
+  
+  describe "home" do
+    it {should have_link('الرئيسية')} 
+    describe "as an admin" do
+      let(:admin){FactoryGirl.create(:admin)}
+      before do
+        sign_in admin
+      end
+      it{should have_link('الحساب')}
     end
   end
+  
+  
+  
+  
 end
