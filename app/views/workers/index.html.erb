@@ -30,11 +30,11 @@
 		
      	      
 	
-		<%= link_to 'Show', worker %>
-		  <%= link_to 'Evaluate', new_worker_rate_path(worker) %>
+		<%= link_to 'اظهار -', worker %>
+		  <%= link_to 'تقييم -', new_worker_rate_path(worker) %>
 		<%if signed_in?%>
-        	<%= link_to 'Edit', edit_worker_path(worker) %>
-        	<%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %>
+        	<%= link_to 'تعديل -', edit_worker_path(worker) %>
+        	<%= link_to 'الغاء ', worker, method: :delete, data: { confirm: 'Are you sure?' } %>
       	<%end%>
        
       </div>
