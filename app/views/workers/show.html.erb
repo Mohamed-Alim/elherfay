@@ -17,30 +17,39 @@
 </p>
 
 <p>
-  <strong>تقييم السعر  : <%= @worker.average_price %></strong>
+  <strong>تقييم السعر  : <%= show_stars(@worker.average_price) %></strong>
 </p>
 
 <p>
-  <strong>تقييم الجوده : <%= @worker.average_quality %></strong>
+  <strong>تقييم الجوده : <%= show_stars(@worker.average_quality) %></strong>
 </p>
 
 <p>
-  <strong>تقييم الانضباط : <%= @worker.average_punctuality %></strong>  
+  <strong>تقييم الانضباط : <%= show_stars(@worker.average_punctuality) %></strong>  
 </p>
 
 <p>
-  <strong>تقييم التعامل :  <%= @worker.average_dealing %></strong>
+  <strong>تقييم التعامل :  <%= show_stars(@worker.average_dealing) %></strong>
 </p>
 
 <p>
-  <strong>تقييم النظافه : <%= @worker.average_cleanliness %></strong>
+  <strong>تقييم النظافه : <%= show_stars(@worker.average_cleanliness) %></strong>
 </p>
 
 <p>
-  <strong>التعليقات:</strong>
+	<div class="row">
+		<div class="col-md-10">
   <% @worker.rates.each do |rate| %>
+  
     <p><%= rate.comment %></p>
+    
   <% end %>
+  </div>
+		<div class="col-md-2">
+  <strong>التعليقات:</strong>
+  </div>
+  
+  </div>
 
 
 </p>

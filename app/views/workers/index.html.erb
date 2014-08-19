@@ -21,11 +21,11 @@
      	 </div>
      
 		<div class="col-md-6 col-lg-pull-6">
-			<h2> تقييم السعر   : <%= output[0] %></h2>
-      		<h2> تقييم الجوده  : <%= output[1] %></h2>
-      		<h2> تقييم الانضباط : <%= output[2] %></h2>
-      		<h2> تقييم التعامل : <%= output[3] %></h2>
-     	 	<h2> تقييم النظافه : <%= output[4] %></h2>
+			<h2> تقييم السعر   : <%= show_stars(output[0]) %></h2>
+      		<h2> تقييم الجوده  : <%= show_stars(output[1]) %></h2>
+      		<h2> تقييم الانضباط : <%= show_stars(output[2]) %></h2>
+      		<h2> تقييم التعامل : <%= show_stars(output[3]) %></h2>
+     	 	<h2> تقييم النظافه : <%= show_stars(output[4]) %></h2>
 		</div>
 		
      	      

@@ -46,7 +46,25 @@ def average_all
   n=n.to_f/rates.size
  
   [x.round,y.round,z.round,m.round,n.round]
+  # out.each do |no|
+    # if out[no]==1
+      # out[no]= 5
+    # elsif out[no]==2
+      # out[no]=4
+#    
+    # elsif out[no]==3
+      # out[no]=3
+#     
+     # elsif out[no]==4
+      # out[no]=2
+#       
+      # else
+      # out[no]=1
+      # end
+    # end
+  # end
 end
+
 def average_price
   x = Rate.where(:worker_id => self.id).average('price').round
 end
@@ -64,4 +82,3 @@ def average_cleanliness
 end
 
 end
-
