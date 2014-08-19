@@ -3,11 +3,16 @@
 namespace :db do
   desc "fill database with sample data"
   task populate: :environment do
+    make_admin
     make_workers
     make_rates
  end
 end
 
+ def make_admin
+   Admin.create(:email => "test@example.com", :password => "123456789", :password_confirmation => "123456789")
+ end
+ 
  def make_workers
    
       99.times do |n|

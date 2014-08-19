@@ -38,15 +38,17 @@
 
 <p>
 	<div class="row">
-		<div class="col-md-10">
+		
+		<div class="col-lg-2 col-lg-push-10">
+  <strong>التعليقات:</strong>
+  </div>
+  
+  <div class="col-lg-10 col-lg-pull-2">
   <% @worker.rates.each do |rate| %>
   
     <p><%= rate.comment %></p>
     
   <% end %>
-  </div>
-		<div class="col-md-2">
-  <strong>التعليقات:</strong>
   </div>
   
   </div>
