@@ -10,9 +10,10 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   gem 'capybara'
   gem 'simplecov', '~> 0.7.1'
-  gem 'faker'
   gem 'sqlite3'
 end
+
+gem 'faker'
 
 group :production do
   gem 'pg'
