@@ -20,6 +20,7 @@ end
   # GET /workers.json
   def index
     @workers = Worker.includes(:rates).sort{|x,y| x.total_average <=> y.total_average}.reverse
+    @workers = Worker.order("availability").reverse
   end
 
   # GET /workers/1

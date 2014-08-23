@@ -1,5 +1,5 @@
 <div class="container">
-<h1>قائمة الفنيين</h1>
+<h2>قائمة الفنيين</h2>
 <% @workers.each do |worker| %>
 	<% output = worker.average_all%>
 	<div class="row">
@@ -30,11 +30,11 @@
 		
      	      
 	
-		<%= link_to 'اظهار -', worker %>
-		  <%= link_to 'تقييم -', new_worker_rate_path(worker) %>
+		<h4><%= link_to 'اظهار ', worker %>
+		  <%= link_to 'تقييم ', new_worker_rate_path(worker) %>
 		<%if signed_in?%>
-        	<%= link_to 'تعديل -', edit_worker_path(worker) %>
-        	<%= link_to 'الغاء ', worker, method: :delete, data: { confirm: 'Are you sure?' } %>
+        	<%= link_to 'تعديل ', edit_worker_path(worker) %>
+        	<%= link_to 'الغاء ', worker, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
       	<%end%>
        
       </div>

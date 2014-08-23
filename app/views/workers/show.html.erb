@@ -3,12 +3,13 @@
   <strong> فني <%= @worker.worker_type %> : <%= @worker.name %>   , التليفون : <%= @worker.telephone %></strong>
 </p>
  
+ 
 <p>
 	<% if @worker.availability?%>
       		
       		<strong>  متاح  : نعم,<%= @worker.avcomment%></h2></strong>
       		<%else%>
-      		<strong>  متاح  : لا,<%= @worker.avcomment%></h2></strong>
+      		<strong>   متاح  : لا,<%= @worker.avcomment%></h2></strong>
 
       <%end%>
 </p>
@@ -37,18 +38,36 @@
 </p>
 
 <p>
+	<strong>اخر ثلاث تقييمات</strong>
+	<%@worker.rates.last(3).each do |rate|%>
+	<h4><strong>السعر : <%=show_stars(rate.price)%></strong>
+		<strong> الجوده : <%=show_stars(rate.quality)%></strong>
+			<strong>الانضباط :<%=show_stars(rate.punctuality)%></strong> 
+			<strong>  التعامل: <%=show_stars(rate.dealing)%></strong> 
+				<strong> النظافه :<%=show_stars(rate.cleanliness)%></strong> </h4>
+				-------------------------------
+	
+	<%end%>
+	</p>
 	<div class="row">
 		
 		<div class="col-lg-2 col-lg-push-10">
   <strong>التعليقات:</strong>
   </div>
-  
   <div class="col-lg-10 col-lg-pull-2">
   <% @worker.rates.each do |rate| %>
   
     <p><%= rate.comment %></p>
     
   <% end %>
+  <% if @worker.rates.any?%>
+		<h3>Rates:<%= @worker.rates.count%></h3>
+		
+		 <%end%>
+ 
+ <h3>Comments:<%= @worker.rates.where("comment IS NOT NULL").count%></h3>
+
+ 
   </div>
   
   </div>

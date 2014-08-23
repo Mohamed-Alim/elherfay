@@ -21,12 +21,26 @@
 en:
   activerecord:
    models:
-     worker:فني
+     #worker:فني
+     #rate: التقييم
+     #admin: المسؤل
     attributes:
       worker:
         name: الاسم
         telephone: التليفون
-  
+        availability: الاتاحة
+        avcomment: الحالة
+        region: المنطقة
+        worker_type: الحرفة
+      rate:
+        quality: الجودة
+        price: السعر
+        cleanliness: النظافة
+        punctuality: الانضباط
+        dealing: التعامل
+        #review: 
+        comment: التعليق
+        
   
   errors:
       format: ! '%{attribute} %{message}'
