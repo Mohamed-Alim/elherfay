@@ -1,81 +1,65 @@
+<div class="container">
 <div class="well">
-<p>
-  <strong> فني <%= @worker.worker_type %> : <%= @worker.name %>   , التليفون : <%= @worker.telephone %></strong>
-</p>
+  <h4><strong> فني <%= @worker.worker_type %> : <%= @worker.name %>   , التليفون : <%= @worker.telephone %></strong></h4>
+
  
- 
-<p>
 	<% if @worker.availability?%>
       		
-      		<strong>  متاح  : نعم,<%= @worker.avcomment%></h2></strong>
+      		<h4><strong>  متاح  : نعم,<%= @worker.avcomment%></strong></h4>
       		<%else%>
-      		<strong>   متاح  : لا,<%= @worker.avcomment%></h2></strong>
+      		<strong>   متاح  : لا,<%= @worker.avcomment%></strong></h4>
 
       <%end%>
-</p>
-<p>
-  <strong>المنطقه : <%= @worker.region %></strong>
-</p>
+  <h4><strong>المنطقه : <%= @worker.region %></strong></h4>
 
-<p>
-  <strong>تقييم السعر  : <%= show_stars(@worker.average_price) %></strong>
-</p>
+  <h4><strong>تقييم السعر  : <%= show_stars(@worker.average_price) %></strong></h4>
 
-<p>
-  <strong>تقييم الجوده : <%= show_stars(@worker.average_quality) %></strong>
-</p>
+  <h4><strong>تقييم الجوده : <%= show_stars(@worker.average_quality) %></strong></h4>
 
-<p>
-  <strong>تقييم الانضباط : <%= show_stars(@worker.average_punctuality) %></strong>  
-</p>
+  <h4><strong>تقييم الانضباط : <%= show_stars(@worker.average_punctuality) %></strong></h4>
 
-<p>
-  <strong>تقييم التعامل :  <%= show_stars(@worker.average_dealing) %></strong>
-</p>
+  <h4><strong>تقييم التعامل :  <%= show_stars(@worker.average_dealing) %></strong></h4>
 
-<p>
-  <strong>تقييم النظافه : <%= show_stars(@worker.average_cleanliness) %></strong>
-</p>
+  <h4><strong>تقييم النظافه : <%= show_stars(@worker.average_cleanliness) %></strong></h4>
 
-<p>
-	<strong>اخر ثلاث تقييمات</strong>
-	<%@worker.rates.last(3).each do |rate|%>
-	<h4><strong>السعر : <%=show_stars(rate.price)%></strong>
-		<strong> الجوده : <%=show_stars(rate.quality)%></strong>
-			<strong>الانضباط :<%=show_stars(rate.punctuality)%></strong> 
-			<strong>  التعامل: <%=show_stars(rate.dealing)%></strong> 
-				<strong> النظافه :<%=show_stars(rate.cleanliness)%></strong> </h4>
-				-------------------------------
-	
-	<%end%>
-	</p>
-	<div class="row">
-		
+	<div class"row">
 		<div class="col-lg-2 col-lg-push-10">
-  <strong>التعليقات:</strong>
-  </div>
-  <div class="col-lg-10 col-lg-pull-2">
-  <% @worker.rates.each do |rate| %>
-  
-    <p><%= rate.comment %></p>
-    
-  <% end %>
-  <% if @worker.rates.any?%>
-		<h3>Rates:<%= @worker.rates.count%></h3>
-		
-		 <%end%>
- 
- <h3>Comments:<%= @worker.rates.where("comment IS NOT NULL").count%></h3>
+			<h4><strong>اخر ثلاث تقييمات: </strong></h4>
+		</div>
+	 	<div class="col-lg-10 col-lg-pull-2">
+	 	<%@worker.rates.last(3).each do |rate|%>
+			<div style="border-bottom: 1px gray solid; width: 25%; margin-left: 25%;"> 
+			<h4><strong>السعر: <%=show_stars(rate.price)%></strong>
+				<strong>الجوده: <%=show_stars(rate.quality)%></strong>
+				<strong>الانضباط:<%=show_stars(rate.punctuality)%></strong> 
+				<strong>التعامل: <%=show_stars(rate.dealing)%></strong> 
+				<strong>النظافه:<%=show_stars(rate.cleanliness)%></strong> </h4>
+			</div>
+		<%end%>
+		</div>
+	</div>
 
- 
-  </div>
-  
-  </div>
+	<div class="row">
+		<div class="col-lg-2 col-lg-push-10">
+  				<h4><strong>التعليقات:</strong></h4>
+  		</div>
+  		<div class="col-lg-10 col-lg-pull-2">
+  			 <% @worker.rates.each do |rate| %>
+  			 <li>
+    			<h4><strong><%= rate.comment %></strong></h4>
+    		</li>
+ 			 <% end %>
+ 		</div>
+  	</div>
+  	<% if @worker.rates.any?%>
+		<h4>التقييمات: <%= @worker.rates.count%></h4>
+	<%end%>
+ 	<h4>التعليقات: <%= @worker.rates.where("comment IS NOT NULL").count%></h4>
 
 
-</p>
-<% if signed_in?%>
-<%= link_to 'Edit', edit_worker_path(@worker) %> |
+<% if admin_signed_in?%>
+<%= link_to 'تعديل', edit_worker_path(@worker) %> |
 <%end%>
-<%= link_to 'Back', workers_path %>
+<%= link_to 'رجوع', workers_path %>
+</div>
 </div>

@@ -61,7 +61,7 @@ class RatesController < ApplicationController
   def destroy
     @rate.destroy
     respond_to do |format|
-      format.html { redirect_to rates_url, notice: 'تمت ازالة التقييم' }
+      format.html { redirect_to worker_rates_url, notice: 'تمت ازالة التقييم' }
       format.json { head :no_content }
     end
   end

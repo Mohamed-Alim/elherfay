@@ -15,11 +15,19 @@ html{
 }
 
 body {
-  // background-image: url('xaml4.png');
+  //background-image: url('blue.jpg');
   //background-size: 1000px 700px;
   //background-repeat: no-repeat;
 }
+.well{
+    //background-image: url('gray.jpg');
+        border: 1px solid gray ;
+    background-color:  #FFFFFF ;
+    opacity: 0.9; /* opacity [0-1] */
+    -moz-opacity: 0.9; /* opacity [0-1] */
+    -webkit-opacity: 0.9; /* opacity [0-1] */
 
+}
 
 table {
     border-collapse: collapse;
@@ -51,8 +59,8 @@ strong{
     display: block;
   }
  .navbar{
-    background-color:   #05006E;
-    background-image: linear-gradient(Teal);
+    //background-color:   #05006E;
+    background-image: url('blue.jpg');
     background-repeat: repeat-x;
     border: 1px solid gray;
     border-radius: 4px 4px 4px 4px;
@@ -61,8 +69,13 @@ strong{
     padding-left: 10px;
     padding-right: 10px;
 }
+h5,h4,h3,h2,h1{
+  color: black;
+
+}
+
 .navbar .nav > li > a, .navbar .nav > li > a {
-color:          gray;
+color:          #888888;
 text-shadow:    black;
 font-size: 19px
 }

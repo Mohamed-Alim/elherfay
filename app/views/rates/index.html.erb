@@ -16,19 +16,16 @@
   </thead>
 
   <tbody>
-    <% @rates.each do |rate| %>
+    <% @worker.rates.each do |rate| %>
       <tr>
-        <td><%= rate.quality %></td>
-        <td><%= rate.price %></td>
-        <td><%= rate.cleanliness %></td>
-        <td><%= rate.punctuality %></td>
-        <td><%= rate.dealing %></td>
-        <td><%= rate.average %></td>
-        <td><%= rate.worker_id %></td>
-        <td><%= rate.review %></td>
-        <td><%= link_to 'Show', rate %></td>
-        <td><%= link_to 'Edit', edit_rate_path(rate) %></td>
-        <td><%= link_to 'Destroy', rate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= show_stars(rate.quality) %></td>
+        <td><%= show_stars(rate.price )%></td>
+        <td><%= show_stars(rate.cleanliness) %></td>
+        <td><%= show_stars(rate.punctuality) %></td>
+        <td><%= show_stars(rate.dealing) %></td>
+        <td><%= link_to 'Show', worker_rate_path(@worker.id,rate.id) %></td>
+        <td><%= link_to 'Edit', edit_worker_rate_path(@worker.id,rate.id) %></td>
+        <td><%= link_to 'Destroy', worker_rate_path(@worker.id,rate.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Rate', new_rate_path %>
+<%= link_to 'New Rate', new_worker_rate_path %>

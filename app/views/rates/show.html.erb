@@ -1,44 +1,47 @@
+<div class="container">
+<div class="well">
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Quality:</strong>
-  <%= @rate.quality %>
+  <h4><strong>الجودة:<%= show_stars(@rate.quality) %></strong></h4>
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @rate.price %>
+  <h4><strong>السعر:<%= show_stars(@rate.price) %></strong></h4>
 </p>
 
 <p>
-  <strong>Cleanliness:</strong>
-  <%= @rate.cleanliness %>
+  <h4><strong>النظافة:<%= show_stars(@rate.cleanliness) %></strong></h4>
 </p>
 
 <p>
-  <strong>Punctuality:</strong>
-  <%= @rate.punctuality %>
+  <h4><strong>الانضبات:<%= show_stars(@rate.punctuality) %></strong></h4>
 </p>
 
 <p>
-  <strong>Dealing:</strong>
-  <%= @rate.dealing %>
+  <h4><strong>التعامل:<%= show_stars(@rate.dealing) %></strong></h4>
 </p>
 
-<p>
-  <strong>Average:</strong>
-  <%= @rate.average %>
-</p>
 
-<p>
-  <strong>Worker:</strong>
-  <%= @rate.worker_id %>
-</p>
-
-<p>
- <strong>Comment:</strong>
-  <%= @rate.comment %>
-</p>
-
-<%= link_to 'Edit', edit_rate_path(@rate) %> |
-<%= link_to 'Back', rates_path %>
+<div class="row">
+		
+	<div class="col-lg-2 col-lg-push-10">
+  <h4><strong>التعليقات:</strong></h4>
+  </div>
+  <div class="col-lg-10 col-lg-pull-2">
+  <% @worker.rates.each do |rate| %>
+  
+    <h4><strong><p><%= rate.comment %></p></strong></h4>
+    
+  <% end %>
+  <% if @worker.rates.any?%>
+		<h4>التقييمات: <%= @worker.rates.count%></h4>
+		
+		 <%end%>
+ </div>
+</div>
+<%= link_to 'تعديل', edit_worker_rate_path(@worker.id,@rate.id) %> |
+<%= link_to 'رجوع', worker_rates_path %>
+</div>
+</div>
