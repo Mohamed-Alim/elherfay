@@ -7,7 +7,7 @@
 
 <p>
   <strong>Picture:</strong>
-<%= image_tag(@business.picture_url, :width => 600) if @business.picture.present? %>
+<%= image_tag(@business.picture_url, :width => 150) if @business.picture.present? %>
 </p>
 
 <%= link_to 'Edit', edit_business_path(@business) %> |
