@@ -5,11 +5,12 @@
 
     <% @worker.rates.each do |rate| %>
 
-        <h4><strong> تقييم الجوده  :<%= show_stars(rate.quality) %><br>
-         تقييم الانضباط : <%= show_stars(rate.punctuality) %><br>
-        تقييم التعامل : <%= show_stars(rate.dealing) %><br>
-		تقييم النظافه :<%= show_stars(rate.cleanliness) %><br>
-         تقييم السعر   : <%= show_stars(rate.price )%></strong></h4><br>
+        <h4>
+				<strong>الجوده&nbsp&nbsp&nbsp: <%=show_stars(rate.quality)%></strong>
+				<strong>الانضباط:<%=show_stars(rate.punctuality)%></strong> 
+				<strong>التعامل&nbsp&nbsp&nbsp: <%=show_stars(rate.dealing)%></strong> 
+				<strong>النظافه&nbsp&nbsp&nbsp:<%=show_stars(rate.cleanliness)%></strong> 
+				<strong>السعر&nbsp&nbsp&nbsp: <%=show_stars(rate.price)%></strong></h4>
         <h4><%= link_to 'اظهار', worker_rate_path(@worker.id,rate.id) %> 
         | <%= link_to 'تعديل', edit_worker_rate_path(@worker.id,rate.id) %> 
         | <%= link_to 'الغاء', worker_rate_path(@worker.id,rate.id), method: :delete, data: { confirm: 'متأكد؟?' } %></h4>
