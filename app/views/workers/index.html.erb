@@ -10,7 +10,6 @@
       		<h2>  التليفون : <%= worker.telephone %></h2>
       		<% if worker.availability?%>
       		
-      		
       		<h2>  متاح  : نعم,<%= worker.avcomment%></h2>
       		<%else%>
       		<h2>  متاح  : لا,<%= worker.avcomment%></h2>
@@ -21,20 +20,20 @@
      	 </div>
      
 		<div class="col-md-6 col-lg-pull-6">
-			<h2> تقييم السعر   : <%= show_stars(output[0]) %></h2>
-      		<h2> تقييم الجوده  : <%= show_stars(output[1]) %></h2>
+			<h2> تقييم الجوده  : <%= show_stars(output[1]) %></h2>
       		<h2> تقييم الانضباط : <%= show_stars(output[2]) %></h2>
       		<h2> تقييم التعامل : <%= show_stars(output[3]) %></h2>
      	 	<h2> تقييم النظافه : <%= show_stars(output[4]) %></h2>
+			<h2> تقييم السعر   : <%= show_stars(output[0]) %></h2>
 		</div>
 		
      	      
 	
 		<h4><%= link_to 'اظهار ', worker %>
-		  <%= link_to 'تقييم ', new_worker_rate_path(worker) %>
+		  | <%= link_to 'تقييم ', new_worker_rate_path(worker) %>
 		<%if signed_in?%>
-        	<%= link_to 'تعديل ', edit_worker_path(worker) %>
-        	<%= link_to 'الغاء ', worker, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+        	| <%= link_to 'تعديل ', edit_worker_path(worker) %>
+        	| <%= link_to 'الغاء ', worker, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
       	<%end%>
        
       </div>

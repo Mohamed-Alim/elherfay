@@ -1,6 +1,11 @@
-<h1>تعديل التقييم</h1>
+<div class="container">
+	<h2>تعديل التقييم</h2>
+
+	<div class="well">
 
 <%= render 'form' %>
 
-<%= link_to 'اظهار', worker_rate_path(@worker.id,@rate.id) %> |
-<%= link_to 'رجوع', worker_rates_path %>
+<h4><%= link_to 'اظهار', worker_rate_path(@worker.id,@rate.id) %> |
+| <%= link_to 'رجوع', worker_rates_path %></h4>
+</div>
+</div>

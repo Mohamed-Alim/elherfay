@@ -1,36 +1,22 @@
-<h1>Listing rates</h1>
+<div class="container">
+	<h2> قائمة التقييمات و التعليقات</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Quality</th>
-      <th>Price</th>
-      <th>Cleanliness</th>
-      <th>Punctuality</th>
-      <th>Dealing</th>
-      <th>Average</th>
-      <th>Worker</th>
-      <th>Review</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+	<div class="well">
 
-  <tbody>
     <% @worker.rates.each do |rate| %>
-      <tr>
-        <td><%= show_stars(rate.quality) %></td>
-        <td><%= show_stars(rate.price )%></td>
-        <td><%= show_stars(rate.cleanliness) %></td>
-        <td><%= show_stars(rate.punctuality) %></td>
-        <td><%= show_stars(rate.dealing) %></td>
-        <td><%= link_to 'Show', worker_rate_path(@worker.id,rate.id) %></td>
-        <td><%= link_to 'Edit', edit_worker_rate_path(@worker.id,rate.id) %></td>
-        <td><%= link_to 'Destroy', worker_rate_path(@worker.id,rate.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
+        <h4><strong> تقييم الجوده  :<%= show_stars(rate.quality) %><br>
+         تقييم الانضباط : <%= show_stars(rate.punctuality) %><br>
+        تقييم التعامل : <%= show_stars(rate.dealing) %><br>
+		تقييم النظافه :<%= show_stars(rate.cleanliness) %><br>
+         تقييم السعر   : <%= show_stars(rate.price )%></strong></h4><br>
+        <h4><%= link_to 'اظهار', worker_rate_path(@worker.id,rate.id) %> 
+        | <%= link_to 'تعديل', edit_worker_rate_path(@worker.id,rate.id) %> 
+        | <%= link_to 'الغاء', worker_rate_path(@worker.id,rate.id), method: :delete, data: { confirm: 'متأكد؟?' } %></h4>
+       <% end %>
+ 	
 <br>
 
-<%= link_to 'New Rate', new_worker_rate_path %>
+<h4><%= link_to 'تقييم جديد', new_worker_rate_path %></h4>
+</div>
+</div>

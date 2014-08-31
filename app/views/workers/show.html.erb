@@ -51,15 +51,23 @@
  			 <% end %>
  		</div>
   	</div>
+  	<%= link_to worker_rates_path(@worker) do %>
+  <i class="icon-ok icon-white"></i> 
   	<% if @worker.rates.any?%>
-		<h4>التقييمات: <%= @worker.rates.count%></h4>
+		<h4 style=color:#428bca>التقييمات: <%= @worker.rates.count%></h4>
 	<%end%>
- 	<h4>التعليقات: <%= @worker.rates.where("comment IS NOT NULL").count%></h4>
-
+	<% end %>
+	<%= link_to worker_rates_path(@worker) do %>
+  <i class="icon-ok icon-white"></i> 
+ 	<h4 style=color:#428bca>التعليقات: <%= @worker.rates.where("comment IS NOT NULL").count%></h4>
+<% end %>
 
 <% if admin_signed_in?%>
-<%= link_to 'تعديل', edit_worker_path(@worker) %> |
+<h4><%= link_to 'تعديل', edit_worker_path(@worker) %>
 <%end%>
-<%= link_to 'رجوع', workers_path %>
+| <%= link_to 'رجوع', workers_path %></h4>
+
+
+
 </div>
 </div>
