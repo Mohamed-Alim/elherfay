@@ -56,5 +56,7 @@ ActiveRecord::Schema.define(version: 20140810120200) do
     t.string   "region"
     t.string   "worker_type"
   end
+  
+   
 
 end
