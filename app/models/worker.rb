@@ -5,6 +5,7 @@ validates :telephone, presence: true
 validates :region, presence: true
 validates :worker_type, presence: true
 has_many :rates, :dependent => :destroy
+belongs_to :business
 
 accepts_nested_attributes_for :rates
 validates_associated :rates

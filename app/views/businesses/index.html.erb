@@ -1,0 +1,36 @@
+<div class="container">
+	
+<h2>قائمة الحرف</h2>
+<div class="well">
+<div style="text-align:center" >
+ 	<body>
+ 	<div class="row">
+ 	
+    <% @businesses.each do |business| %>
+		<h4><strong><%= business.name %></strong></h4>
+		<%= image_tag(business.picture_url, :width => 150) if business.picture.present? %>
+         <br>
+         <br>
+		<br>
+
+        <h4><strong><%= link_to 'اظهار', business %>
+        	        <% if admin_signed_in?%>
+
+        | <%= link_to 'تعديل', edit_business_path(business) %>
+        | <%= link_to 'الغاء', business, method: :delete, data: { confirm: 'Are you sure?' } %>
+      
+      <br>
+      <br>
+      <%end%>
+      </strong></h4>
+    <% end %>
+  </div>
+<br>
+<br>
+<% if admin_signed_in?%>
+<%= link_to 'اضافة حرفة', new_business_path %>
+<%end%>
+ </body>
+</div>
+</div>
+</div>

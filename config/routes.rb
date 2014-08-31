@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
-  root :to => 'workers#home'
+  resources :businesses
+
+  root :to => 'businesses#index'
   get '/about' => 'workers#about'
   get'/contact'=> 'workers#contact'
   get '/steps' => 'workers#steps'

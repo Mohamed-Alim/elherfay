@@ -12,8 +12,11 @@
 				<strong>النظافه&nbsp&nbsp&nbsp:<%=show_stars(rate.cleanliness)%></strong> 
 				<strong>السعر&nbsp&nbsp&nbsp: <%=show_stars(rate.price)%></strong></h4>
         <h4><%= link_to 'اظهار', worker_rate_path(@worker.id,rate.id) %> 
+        	        <% if admin_signed_in?%>
+
         | <%= link_to 'تعديل', edit_worker_rate_path(@worker.id,rate.id) %> 
         | <%= link_to 'الغاء', worker_rate_path(@worker.id,rate.id), method: :delete, data: { confirm: 'متأكد؟?' } %></h4>
+       <%end%>
        <% end %>
  	
 <br>
