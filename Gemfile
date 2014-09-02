@@ -11,8 +11,9 @@ group :development, :test do
   gem 'capybara'
   gem 'simplecov', '~> 0.7.1'
   gem 'sqlite3'
-  gem 'carrierwave'
 end
+
+gem 'carrierwave'
 
 gem 'faker'
 
