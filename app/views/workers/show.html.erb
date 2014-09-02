@@ -1,6 +1,6 @@
 <div class="container">
 <div class="well">
-  <h4><strong> فني <%= @worker.worker_type %>&nbsp:&nbsp&nbsp&nbsp<%= @worker.name %>   , التليفون&nbsp&nbsp&nbsp : &nbsp&nbsp&nbsp<%= @worker.telephone %></strong></h4>
+  <h4><strong> فني <%= @worker.business.name %>&nbsp:&nbsp&nbsp&nbsp<%= @worker.name %>   , التليفون&nbsp&nbsp&nbsp : &nbsp&nbsp&nbsp<%= @worker.telephone %></strong></h4>
 
  
 	<% if @worker.availability?%>

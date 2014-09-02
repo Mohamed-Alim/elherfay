@@ -3,7 +3,7 @@ class Worker < ActiveRecord::Base
 validates :name, presence: true
 validates :telephone, presence: true
 validates :region, presence: true
-validates :worker_type, presence: true
+validates :business_id, presence: true
 has_many :rates, :dependent => :destroy
 belongs_to :business
 

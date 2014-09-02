@@ -64,7 +64,7 @@
   			</div>
   			<div class="field">
     			<%= f.label :نوع_الحرفة%><br>
-    			<%= f.text_field :worker_type %>
+    			<%= select(:model, :attribute, Business.all.collect {|p| [ p.name, p.id ] }) %>
  			</div>
  			
  			

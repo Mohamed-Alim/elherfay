@@ -4,6 +4,7 @@ namespace :db do
   desc "fill database with sample data"
   task populate: :environment do
     make_admin
+    make_businesses
     make_workers
     make_rates
  end
@@ -13,16 +14,22 @@ end
    Admin.create(:email => "test@example.com", :password => "123456789", :password_confirmation => "123456789")
  end
  
+ def make_businesses
+   4.times do |n|
+     Business.create(:name => Faker::Name.name, :picture => File.open(Dir.glob(File.join(Rails.root, 'app/assets/images/sampleimages', '*')).sample))
+   end
+ end
+ 
  def make_workers
-   
-      99.times do |n|
+   Business.all.each do |b|
+      20.times do |n|
         name= Faker::Name.name
         telephone=Faker::PhoneNumber.cell_phone
         avcomment=Faker::Lorem.sentence(3)
         region=Faker::Lorem.sentence(2)
-        type=Faker::Lorem.word
-        Worker.create!(availability: [true, false].sample, name: name, avcomment: avcomment,region: region,worker_type:type, telephone: telephone   )
+        Worker.create!(business_id: b.id, availability: [true, false].sample, name: name, avcomment: avcomment,region: region, telephone: telephone   )
     end
+   end
  end
  
  def make_rates

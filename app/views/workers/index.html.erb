@@ -6,13 +6,13 @@
 	<div class="well">
 		
 		<div class="col-md-6 col-lg-push-6">
-			<h4><strong>فني <%= worker.worker_type%> &nbsp:&nbsp&nbsp&nbsp <%= worker.name %></strong></h4>
+			<h4><strong>فني <%= worker.business_id%> &nbsp:&nbsp&nbsp&nbsp <%= worker.name %></strong></h4>
       		<h4><strong>  التليفون&nbsp&nbsp&nbsp : &nbsp&nbsp&nbsp<%= worker.telephone %></strong></h4>
       		<% if worker.availability?%>
       		
       		<h4><strong>  متاح  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp نعم&nbsp&nbsp&nbsp,&nbsp&nbsp&nbsp&nbsp<%= worker.avcomment%></strong></h4>
       		<%else%>
-      		<h4><strong>  متاح  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: لا &nbsp&nbsp&nbsp,&nbsp&nbsp&nbsp&nbsp<%= worker.avcomment%></strong></h4>
+      		<h4><strong>  متاح &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp  لا &nbsp&nbsp&nbsp,&nbsp&nbsp&nbsp&nbsp<%= worker.avcomment%></strong></h4>
 
       		<%end%>
      		<h4><strong> المنطقه &nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp <%= worker.region %></strong></h4>

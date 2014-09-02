@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831205112) do
+ActiveRecord::Schema.define(version: 20140901201521) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20140831205112) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "region"
-    t.string   "worker_type"
+    t.integer  "business_id",  limit: 255
   end
 
 end
