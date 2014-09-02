@@ -1,26 +1,35 @@
-<div class="container">
-	<h2> قائمة التقييمات و التعليقات</h2>
+		
+<% if @comments!="true" %>
+	<div class="container">
+		<h2> قائمة التقييمات</h2>
+		<div class="well">
+			<% @worker.rates.each do |rate| %>
+				<h4><strong>الجوده&nbsp&nbsp&nbsp: <%=show_stars(rate.quality)%></strong>
+					<strong>الانضباط:<%=show_stars(rate.punctuality)%></strong> 
+					<strong>التعامل&nbsp&nbsp&nbsp: <%=show_stars(rate.dealing)%></strong> 
+					<strong>النظافه&nbsp&nbsp&nbsp:<%=show_stars(rate.cleanliness)%></strong> 
+					<strong>السعر&nbsp&nbsp&nbsp: <%=show_stars(rate.price)%></strong></h4>
+			
+        	    <% if admin_signed_in?%>
+        			<h4><%= link_to 'الغاء', worker_rate_path(@worker.id,rate.id), method: :delete, data: { confirm: 'متأكد؟' } %></h4>
+       			<%end%>
+			<%end%>
+			<h4><%= link_to 'تقييم جديد', new_worker_rate_path %></h4>
+		</div>
+	</div>
 
-	<div class="well">
+<% else %>
+	<div class="container">
+		<h2> قائمة التعليقات</h2>
+		<div class="well">
+			<% @worker.rates.each do |rate| %>
+					<h4><strong><%= rate.comment %></strong></h4>
+			<% end %>
+			<h4><%= link_to 'تقييم جديد', new_worker_rate_path %></h4>
 
-    <% @worker.rates.each do |rate| %>
-
-        <h4>
-				<strong>الجوده&nbsp&nbsp&nbsp: <%=show_stars(rate.quality)%></strong>
-				<strong>الانضباط:<%=show_stars(rate.punctuality)%></strong> 
-				<strong>التعامل&nbsp&nbsp&nbsp: <%=show_stars(rate.dealing)%></strong> 
-				<strong>النظافه&nbsp&nbsp&nbsp:<%=show_stars(rate.cleanliness)%></strong> 
-				<strong>السعر&nbsp&nbsp&nbsp: <%=show_stars(rate.price)%></strong></h4>
-        <h4><%= link_to 'اظهار', worker_rate_path(@worker.id,rate.id) %> 
-        	        <% if admin_signed_in?%>
-
-        | <%= link_to 'تعديل', edit_worker_rate_path(@worker.id,rate.id) %> 
-        | <%= link_to 'الغاء', worker_rate_path(@worker.id,rate.id), method: :delete, data: { confirm: 'متأكد؟?' } %></h4>
-       <%end%>
-       <% end %>
+        </div>
+     </div>  
+<% end %>
  	
 <br>
 
-<h4><%= link_to 'تقييم جديد', new_worker_rate_path %></h4>
-</div>
-</div>

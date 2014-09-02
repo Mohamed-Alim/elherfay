@@ -19,8 +19,10 @@ end
   # GET /workers
   # GET /workers.json
   def index
-    @workers = Worker.includes(:rates).sort{|x,y| x.total_average <=> y.total_average}.reverse
-    @workers = Worker.order("availability").reverse
+    @workers=Worker.all
+    @workers= @workers.where(:business_id => params[:worker_type]) if params.has_key?"worker_type"
+    @workers = @workers.includes(:rates).sort_by{|x| [x.availability.to_s, x.total_average]}.reverse
+    #@workers = @workers.order("availability").reverse
   end
 
   # GET /workers/1

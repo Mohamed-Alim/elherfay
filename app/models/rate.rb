@@ -5,6 +5,9 @@ class Rate < ActiveRecord::Base
   validates :punctuality, :presence => true, length:{minimum:1 , maximum:5}
   validates :dealing, :presence => true, length:{minimum:1 , maximum:5}
   validates :cleanliness, :presence => true, length:{minimum:1 , maximum:5}
+  validates :customer_name, :presence => true
+  validates :customer_telephone, :presence => true
+
   belongs_to :worker
   
   

@@ -32,6 +32,18 @@
     <%= f.number_field :cleanliness , in: 1..5%>
   </div>
  
+ <div class="field">
+    <%= f.label :الاسم %><br>
+    <%= f.text_field :customer_name%>
+  </div>
+  <div class="field">
+    <%= f.label :التليفون %><br>
+    <%= f.text_field :customer_telephone%>
+  </div>
+  <div class="field">
+    <%= f.label :العنوان %><br>
+    <%= f.text_field :customer_address%>
+  </div>
  
   <div class="actions">
     <%= f.submit %>

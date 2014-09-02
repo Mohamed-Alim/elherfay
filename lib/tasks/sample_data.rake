@@ -39,7 +39,10 @@ end
   10.times do
     
     workers.each{|worker| worker.rates.create!(price:rand(1..5), quality:rand(1..5), cleanliness: rand(1..5), 
-      punctuality:rand(1..5), dealing:rand(1..5), comment: Faker::Lorem.sentence(8))}
+      punctuality:rand(1..5), dealing:rand(1..5), comment: Faker::Lorem.sentence(8),
+      customer_name:Faker::Name.name,
+      customer_telephone:Faker::PhoneNumber.cell_phone, 
+      customer_address:Faker::Address.street_address)}
   end
  end
  

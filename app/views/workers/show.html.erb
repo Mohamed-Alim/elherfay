@@ -47,13 +47,13 @@
  			 <% end %>
  		</div>
   	</div>
-  	<%= link_to worker_rates_path(@worker) do %>
+  	<%= link_to worker_rates_path(@worker, :comments => false) do %>
   <i class="icon-ok icon-white"></i> 
   	<% if @worker.rates.any?%>
 		<h4 style=color:#428bca>التقييمات: <%= @worker.rates.count%></h4>
 	<%end%>
 	<% end %>
-	<%= link_to worker_rates_path(@worker) do %>
+	<%= link_to worker_rates_path(@worker, :comments => true) do %>
   <i class="icon-ok icon-white"></i> 
  	<h4 style=color:#428bca>التعليقات: <%= @worker.rates.where("comment IS NOT NULL").count%></h4>
 <% end %>

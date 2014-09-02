@@ -9,6 +9,7 @@ class RatesController < ApplicationController
   # GET /rates.json
   def index
     @rates = Rate.all
+    @comments = params[:comments]
   end
 
   # GET /rates/1
@@ -78,6 +79,7 @@ class RatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rate_params
-      params.require(:rate).permit(:quality, :price, :cleanliness, :punctuality, :dealing, :average, :worker_id, :review, :comment)
+      params.require(:rate).permit(:quality, :price, :cleanliness, :punctuality, :dealing, :average,
+       :worker_id, :review, :comment ,:customer_name, :customer_address, :customer_telephone)
     end
 end
