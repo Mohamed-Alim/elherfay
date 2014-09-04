@@ -27,7 +27,7 @@ def total_average
     end
     
     
-    average = (x.to_f/rates.size+y.to_f/rates.size+z.to_f/rates.size+m.to_f/rates.size+n.to_f/rates.size)/5
+    average = ((x.to_f/rates.size+y.to_f/rates.size+z.to_f/rates.size+m.to_f/rates.size+n.to_f/rates.size)/5).round
   end
   
 def average_all

@@ -1,5 +1,8 @@
+<div class="container">
+	<div class="well">
 <p>مرحبا <%= @email %>!</p>
 
 <p>بأمكانك تأكيد البريد الالكتروني لحسابك من خلال الرابط أدناه</p>
 
 <p><%= link_to 'تأكيد الحساب', confirmation_url(@resource, confirmation_token: @token) %></p>
+</div></div>

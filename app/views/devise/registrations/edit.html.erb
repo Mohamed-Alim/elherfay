@@ -1,3 +1,5 @@
+<div class="container">
+	<div class="well">
 <h2>تعديل <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -27,3 +29,4 @@
 <p>غير راضي؟ <%= button_to "الغاء حسابي", registration_path(resource_name), data: { confirm: "متأكد؟" }, method: :delete %></p>
 
 <%= link_to "رجوع", :back %>
+</div></div>

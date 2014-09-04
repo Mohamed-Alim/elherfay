@@ -5,6 +5,6 @@ def show_stars(l)
 end
   
 def show_color(c)
-  
+  image_tag "circle#{c}.png", :style => "width:125;height:50px"
 end  
 end

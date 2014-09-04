@@ -1,3 +1,5 @@
+<div class="container">
+	<div class="well">
 <p>مرحبا <%= @resource.email %>!</p>
 
 <p>تم غلق حسابك بسبب وجود عدد كبير من محاولات الدخول غير ناجحة.</p>
@@ -6,3 +8,4 @@
 
 
 <p><%= link_to 'فتح حسابي', unlock_url(@resource, unlock_token: @token) %></p>
+</div></div>

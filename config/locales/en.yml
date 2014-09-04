@@ -37,41 +37,40 @@ en:
         price: السعر
         cleanliness: النظافة
         punctuality: الانضباط
-        dealing: التعامل
-        #review: 
+        dealing: التعامل 
         comment: التعليق
         
   
   errors:
       format: ! '%{attribute} %{message}'
       messages:
-        accepted: must be accepted
+        accepted: يجب أن يكون مقبولا
         blank: لا يمكن ان يكون فارغ
-        confirmation: doesn't match confirmation
-        empty: can't be empty
-        equal_to: must be equal to %{count}
-        even: must be even
-        exclusion: is reserved
-        greater_than: must be greater than %{count}
-        greater_than_or_equal_to: must be greater than or equal to %{count}
+        confirmation: لا يطابق التأكيد
+        empty: لا يمكن ان يكون فارغ
+        equal_to: يجب أن يكون مساويا ل %{count}
+        even: يجب أن يكون الرقم الزوجي
+        exclusion: محجوز
+        greater_than: يجب أن يكون أكبر من %{count}
+        greater_than_or_equal_to: يجب أن يكون أكبر من أو يساوي %{count}
         inclusion: is not included in the list
-        invalid: is invalid
-        less_than: must be less than %{count}
-        less_than_or_equal_to: must be less than or equal to %{count}
-        not_a_number: is not a number
-        not_an_integer: must be an integer
-        odd: must be odd
-        record_invalid: ! 'Validation failed: %{errors}'
-        taken: has already been taken
+        invalid: غير صالح
+        less_than: يجب أن يكون أقل من %{count}
+        less_than_or_equal_to: يجب أن يكون أقل من أو يساوي %{count}
+        not_a_number: ليس رقم
+        not_an_integer: يجب أن يكون عدد صحيح
+        odd: يجب أن يكون عدد فردي
+        record_invalid: ! 'فشل التحقق من الصحة: %{errors}'
+        taken: لقد أتخذ بالفعل
         too_long:
-          one: is too long (maximum is 1 character)
-          other: is too long (maximum is %{count} characters)
+          one: طويل جدا (الحد الأقصى هو حرف 1)
+          other: طويل جدا (الحد الأقصى هو %{count}  حرفا)
         too_short:
-          one: is too short (minimum is 1 character)
-          other: is too short (minimum is %{count} characters)
+          one: قصير جدا ( الحد الأدنى هو حرف  1 )
+          other: قصير جدا (الحد الأدنى هو %{count} حرفا)
         wrong_length:
-          one: is the wrong length (should be 1 character)
-          other: is the wrong length (should be %{count} characters)
+          one: هو طول خاطئ (يجب أن يكون حرف 1)
+          other: هو طول خاطئ (يجب أن يكون %{count} حرفا)
       template:
         body: ! 'There were problems with the following fields:'
         header:

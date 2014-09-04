@@ -15,26 +15,31 @@
       		<h4><strong>  متاح &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp  لا &nbsp&nbsp&nbsp,&nbsp&nbsp&nbsp&nbsp<%= worker.avcomment%></strong></h4>
 
       		<%end%>
-     		<h4><strong> المنطقه &nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp <%= worker.region %></strong></h4>
-
+     		<!-- <h4><strong> المنطقه &nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp <%= worker.region %></strong></h4> -->
      	 </div>
-     
-		<div class="col-md-6 col-lg-pull-6">
+     		<div class="col-md-6 col-lg-pull-6">
+     			<h4><strong>التقييم&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= show_color(worker.total_average)%></strong></h4>
+     			
+			</div>
+		<!-- <div class="col-md-6 col-lg-pull-6">
 			<h4><strong> تقييم الجوده  &nbsp&nbsp&nbsp: <%= show_stars(output[1]) %></strong></h4>
       		<h4><strong> تقييم الانضباط : <%= show_stars(output[2]) %></strong></h4>
       		<h4><strong> تقييم التعامل &nbsp&nbsp&nbsp: <%= show_stars(output[3]) %></strong></h4>
      	 	<h4><strong> تقييم النظافه &nbsp&nbsp&nbsp: <%= show_stars(output[4]) %></strong></h4>
 			<h4><strong> تقييم السعر   &nbsp&nbsp&nbsp: <%= show_stars(output[0]) %></strong></h4>
-		</div>
-		
-     	      
-	
-		<h4><%= link_to 'اظهار ', worker %>
+		</div> -->
+		<div class="row">
+			<div class="col-md-12">
+			<h4><%= link_to 'اظهار ', worker %>
 		  | <%= link_to 'تقييم ', new_worker_rate_path(worker) %>
 		<%if signed_in?%>
         	| <%= link_to 'تعديل ', edit_worker_path(worker) %>
         	| <%= link_to 'الغاء ', worker, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
       	<%end%>
+	</div>
+	</div>
+
+		
        
       </div>
 </div>
