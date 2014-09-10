@@ -42,11 +42,13 @@
   		<div class="col-lg-10 col-lg-pull-2">
   			 <% @worker.rates.each do |rate| %>
   			 <li>
+  			 	<% @worker.rates.reject(&:blank?) %>
     			<h4><strong><%= rate.comment %></strong></h4>
     		</li>
  			 <% end %>
  		</div>
   	</div>
+  	<% if admin_signed_in?%>
   	<%= link_to worker_rates_path(@worker, :comments => false) do %>
   <i class="icon-ok icon-white"></i> 
   	<% if @worker.rates.any?%>
@@ -57,7 +59,7 @@
   <i class="icon-ok icon-white"></i> 
  	<h4 style=color:#428bca>التعليقات: <%= @worker.rates.where("comment IS NOT NULL").count%></h4>
 <% end %>
-
+<%end%>
 <% if admin_signed_in?%>
 <h4><%= link_to 'تعديل', edit_worker_path(@worker) %>
 <%end%>

@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>الاسم:</strong>
   <%= @business.name %>
 </p>
 
 <p>
-  <strong>Picture:</strong>
+  <strong>الصورة:</strong>
 <%= image_tag(@business.picture_url, :width => 150) if @business.picture.present? %>
 </p>
 
-<%= link_to 'Edit', edit_business_path(@business) %> |
-<%= link_to 'Back', businesses_path %>
+<%= link_to 'تعديل', edit_business_path(@business) %> |
+<%= link_to 'الرجوع', businesses_path %>

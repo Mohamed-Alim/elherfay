@@ -13,7 +13,7 @@
          <br>
 		<br>
 
-        <h4><strong><%= link_to 'اظهار', workers_path(:worker_type => business.id) %>
+        <h4><%= link_to 'اظهار', workers_path(:worker_type => business.id) %>
         	        <% if admin_signed_in?%>
 
         | <%= link_to 'تعديل', edit_business_path(business) %>
@@ -22,7 +22,7 @@
       <br>
       <br>
       <%end%>
-      </strong></h4>
+     </h4>
     <% end %>
   </div>
 <br>

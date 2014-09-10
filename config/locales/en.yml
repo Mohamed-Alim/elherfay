@@ -72,8 +72,8 @@ en:
           one: هو طول خاطئ (يجب أن يكون حرف 1)
           other: هو طول خاطئ (يجب أن يكون %{count} حرفا)
       template:
-        body: ! 'There were problems with the following fields:'
+        body: ! 'كانت هناك مشاكل مع التالي:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: ! '%{count} errors prohibited this %{model} from being saved'
+          one: 1 خطأ يحظر هذا %{model} من ان يتم حفظه
+          other: ! '%{count} اخطاء تحظر هذا %{model} من ان يتم حفظه'
   

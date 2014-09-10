@@ -24,6 +24,9 @@
 		<div class="well">
 			<% @worker.rates.each do |rate| %>
 					<h4><strong><%= rate.comment %></strong></h4>
+					 <!-- <% if admin_signed_in?%>
+        			<h4><%= link_to 'الغاء', worker_rate_path(@worker.id,rate.id), method: :delete, data: { confirm: 'متأكد؟' } %></h4>
+       			<%end%> -->
 			<% end %>
 			<h4><%= link_to 'تقييم جديد', new_worker_rate_path %></h4>
 
